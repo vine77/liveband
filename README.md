@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/liveband/liveband.png?label=ready&title=Ready)](https://waffle.io/liveband/liveband)
 LiveBand
 ========
 
