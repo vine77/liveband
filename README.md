@@ -1,6 +1,4 @@
-[![Stories in Ready](https://badge.waffle.io/liveband/liveband.png?label=ready&title=Ready)](https://waffle.io/liveband/liveband)
-LiveBand
-========
+# LiveBand [![Code Climate](https://codeclimate.com/github/liveband/liveband/badges/gpa.svg)](https://codeclimate.com/github/liveband/liveband) [![Issues in ready state](https://badge.waffle.io/liveband/liveband.png?label=ready&title=Ready)](https://waffle.io/liveband/liveband)
 
 LiveBand is intended to be a collaborative digital audio workstation (DAW) web application for creating music in the cloud with other musicians.
 
@@ -23,7 +21,7 @@ You will need the following things properly installed on your computer.
 ## Running / Development
 
 * `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* Visit your app at http://localhost:4200.
 
 ### Code Generators
 
