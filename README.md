@@ -9,19 +9,21 @@ Most of the popular desktop DAWs do not have any built-in collaborative features
 You will need the following things properly installed on your computer.
 
 * [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM) and [Bower](http://bower.io/)
+* [Node.js](http://nodejs.org/) (with NPM)
+* [Bower](http://bower.io/): `sudo npm install -g bower`
+* [Ember CLI](http://ember-cli.com): `sudo npm install -g ember-cli`
 
 ## Installation
 
 * `git clone https://github.com/liveband/liveband.git` this repository
-* change into the new directory
+* `cd liveband` into the new directory
 * `npm install`
 * `bower install`
 
 ## Running / Development
 
 * `ember server`
-* Visit your app at http://localhost:4200.
+* Visit your app at [http://localhost:4200](http://localhost:4200)
 
 ### Code Generators
 
