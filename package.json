@@ -11,9 +11,9 @@
     "build": "ember build",
     "test": "ember test"
   },
-  "repository": "https://github.com/stefanpenner/ember-cli",
+  "repository": "https://github.com/liveband/liveband.git",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": "~0.10.0"
   },
   "author": "",
   "license": "MIT",
