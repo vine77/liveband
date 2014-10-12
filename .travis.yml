@@ -11,8 +11,8 @@ script:
 - npm test
 deploy:
   provider: heroku
+  strategy: api
+  buildpack: https://github.com/tonycoco/heroku-buildpack-ember-cli.git
   api_key:
     secure: SdUfMZVRlmaZNST1rvzm7uX3g5zhGlaIL1DHKYB5QClfVg8V+MzQhe1jgTmAxBD2fWZklSOd8tNeLyiBrX+x6+bFY1lAFtZysKQdZwBq9DdNeCoT4u65xshuN2KvlcVtPwH88VvLKuSN7JwEqkBIVkntKIEEY3tG/4Yu1iuK/kE=
   app: liveband
-  on:
-    repo: liveband/liveband
