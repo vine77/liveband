@@ -218,14 +218,14 @@
         <text>LiveBand</text>
       </controlProperties>
     </control>
-    <control controlID="97" controlTypeID="com.balsamiq.mockups::Canvas" x="164" y="88" w="190" h="371" measuredW="100" measuredH="70" zOrder="55" locked="false" isInGroup="-1"/>
-    <control controlID="98" controlTypeID="com.balsamiq.mockups::CallOut" x="179" y="103" w="111" h="41" measuredW="111" measuredH="39" zOrder="56" locked="false" isInGroup="-1">
+    <control controlID="97" controlTypeID="com.balsamiq.mockups::Canvas" x="164" y="134" w="190" h="324" measuredW="100" measuredH="70" zOrder="55" locked="false" isInGroup="-1"/>
+    <control controlID="98" controlTypeID="com.balsamiq.mockups::CallOut" x="179" y="153" w="111" h="41" measuredW="111" measuredH="39" zOrder="56" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Library%20drawer</text>
       </controlProperties>
     </control>
-    <control controlID="99" controlTypeID="com.balsamiq.mockups::Canvas" x="1251" y="88" w="190" h="370" measuredW="100" measuredH="70" zOrder="57" locked="false" isInGroup="-1"/>
-    <control controlID="100" controlTypeID="com.balsamiq.mockups::CallOut" x="1266" y="153" w="87" h="41" measuredW="87" measuredH="39" zOrder="58" locked="false" isInGroup="-1">
+    <control controlID="99" controlTypeID="com.balsamiq.mockups::Canvas" x="1251" y="134" w="190" h="324" measuredW="100" measuredH="70" zOrder="57" locked="false" isInGroup="-1"/>
+    <control controlID="100" controlTypeID="com.balsamiq.mockups::CallOut" x="1266" y="183" w="87" h="41" measuredW="87" measuredH="39" zOrder="58" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Chat%20pane</text>
       </controlProperties>
@@ -236,7 +236,7 @@
         <text>Instrument/effect%20details%20%28signal%20chain%29%2C%20waveform%20editor%2C%20sequencer/piano%20roll%2C%20or%20mixer</text>
       </controlProperties>
     </control>
-    <control controlID="104" controlTypeID="com.balsamiq.mockups::Canvas" x="353" y="87" w="898" h="51" measuredW="100" measuredH="70" zOrder="41" locked="false" isInGroup="-1">
+    <control controlID="104" controlTypeID="com.balsamiq.mockups::Canvas" x="164" y="87" w="1277" h="51" measuredW="100" measuredH="70" zOrder="41" locked="false" isInGroup="-1">
       <controlProperties>
         <color>13421772</color>
       </controlProperties>
@@ -261,13 +261,13 @@
         <text>Signature</text>
       </controlProperties>
     </control>
-    <control controlID="109" controlTypeID="com.balsamiq.mockups::CheckBox" x="1054" y="89" w="86" h="23" measuredW="86" measuredH="22" zOrder="46" locked="false" isInGroup="-1">
+    <control controlID="109" controlTypeID="com.balsamiq.mockups::CheckBox" x="1113" y="101" w="86" h="23" measuredW="86" measuredH="22" zOrder="46" locked="false" isInGroup="-1">
       <controlProperties>
         <state>selected</state>
         <text>Metronome</text>
       </controlProperties>
     </control>
-    <control controlID="110" controlTypeID="com.balsamiq.mockups::CheckBox" x="1054" y="112" w="86" h="23" measuredW="64" measuredH="22" zOrder="47" locked="false" isInGroup="-1">
+    <control controlID="110" controlTypeID="com.balsamiq.mockups::CheckBox" x="1214" y="101" w="86" h="23" measuredW="64" measuredH="22" zOrder="47" locked="false" isInGroup="-1">
       <controlProperties>
         <state>selected</state>
         <text>Lead%20in</text>
@@ -290,14 +290,14 @@
     </control>
     <control controlID="117" controlTypeID="com.balsamiq.mockups::VolumeSlider" x="455" y="312" w="88" h="-1" measuredW="72" measuredH="16" zOrder="64" locked="false" isInGroup="-1"/>
     <control controlID="118" controlTypeID="com.balsamiq.mockups::VolumeSlider" x="455" y="233" w="88" h="-1" measuredW="72" measuredH="16" zOrder="65" locked="false" isInGroup="-1"/>
-    <control controlID="119" controlTypeID="com.balsamiq.mockups::VolumeSlider" x="1152" y="106" w="88" h="-1" measuredW="72" measuredH="16" zOrder="66" locked="false" isInGroup="-1"/>
+    <control controlID="119" controlTypeID="com.balsamiq.mockups::VolumeSlider" x="1329" y="104" w="88" h="-1" measuredW="72" measuredH="16" zOrder="66" locked="false" isInGroup="-1"/>
     <control controlID="129" controlTypeID="com.balsamiq.mockups::Canvas" x="354" y="332" w="898" h="84" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1"/>
     <control controlID="130" controlTypeID="com.balsamiq.mockups::Button" x="368" y="143" w="-1" h="-1" measuredW="31" measuredH="27" zOrder="67" locked="false" isInGroup="-1">
       <controlProperties>
         <text>+</text>
       </controlProperties>
     </control>
-    <control controlID="131" controlTypeID="__group__" x="368" y="100" w="226" h="24" measuredW="226" measuredH="24" zOrder="48" locked="false" isInGroup="-1">
+    <control controlID="131" controlTypeID="__group__" x="179" y="100" w="226" h="24" measuredW="226" measuredH="24" zOrder="48" locked="false" isInGroup="-1">
       <groupChildrenDescriptors>
         <control controlID="0" controlTypeID="com.balsamiq.mockups::Icon" x="161" y="0" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="0" locked="false" isInGroup="131">
           <controlProperties>
@@ -332,7 +332,7 @@
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="132" controlTypeID="com.balsamiq.mockups::Label" x="1266" y="102" w="81" h="-1" measuredW="77" measuredH="21" zOrder="68" locked="false" isInGroup="-1">
+    <control controlID="132" controlTypeID="com.balsamiq.mockups::Label" x="1266" y="146" w="81" h="-1" measuredW="77" measuredH="21" zOrder="68" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Collaborators</text>
       </controlProperties>
