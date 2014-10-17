@@ -1,0 +1,9 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="0" measuredH="0" mockupW="0" mockupH="0">
+  <controls>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Label" x="1326" y="91" w="78" h="-1" measuredW="46" measuredH="21" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>General</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
