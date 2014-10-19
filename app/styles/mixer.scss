@@ -1,0 +1,111 @@
+#mixer {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  max-height: 655px;
+  border-bottom: 1px solid #bbb;
+
+  background-color: white;
+
+  .master-track {
+    width: 150px;
+    /*TODO: Finish master track*/
+    background-color: #2C6BA1;
+    font-weight: bold;
+  }
+
+  .mixer-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tracks {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+  }
+
+  .track {
+    float:left;
+    border-right: 1px solid #bbb;
+    text-align: center;
+  }
+
+  .track div {
+    padding: 5px;
+  }
+
+  .mixer-labels {
+    width: 100px;
+    text-align: right;
+    padding-right: 6px;
+    border-right: 1px solid #bbb;
+  }
+
+  .mixer-labels div {
+    padding: 8px 0;
+  }
+
+  .input-section {
+    flex: 0 0 40px;
+  }
+
+  .effects-section {
+    flex: 0 0 150px;
+  }
+
+  .output-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .label-section {
+    flex: 0 0 30px;
+    border-top: 1px solid #bbb;
+  }
+
+  .track-volume {
+    display: flex;
+    flex-direction: row;
+    /* TODO: Temporary fix for knob canvas being too long */
+    z-index: 500;
+
+    .volume-column {
+       height: 225px;
+      flex: 1;
+
+      .volume-slider {
+        height: 225px;
+      }
+    }
+  }
+
+  .output-section .track-toggles,
+  .output-section .output-button-row {
+    flex: 0 0 40px;
+  }
+
+  .output-section .knob {
+    flex: 0 0 80px;
+  }
+
+  .output-section .track-volume {
+    flex: 1;
+  }
+
+  .single-button button {
+    width: 100%;
+  }
+
+  .track-toggles {
+    /* TODO: Temporary fix for knob canvas being too long */
+    z-index: 500;
+  }
+}

@@ -1,0 +1,44 @@
+<div class="track mixer-col">
+			<div class="input-section single-button">
+				<button type="button" class="btn btn-default">
+					{{input.label}}
+				</button>
+			</div>
+			<div class="effects-section">
+				{{#each effects}}
+					<div class="single-button">
+						<button type="button" class="btn btn-primary">
+						{{label}}
+						</button>
+					</div>
+				{{/each}}
+			</div>
+			<div class="output-section">
+				<div class="output-button-row single-button">
+					<button type="button" class="btn btn-default">
+					{{output.label}}
+					</button>
+				</div>
+				<div class="knob">
+          <!-- TODO: replace this with ember-knob helper -->
+					{{input value=leftRightBalance class="mixer-knob"}}
+				</div>
+				<div class="track-toggles">
+					<button type="button" class="btn btn-default">S</button>
+					<button type="button" class="btn btn-default">M</button>
+				</div>
+				<div class="track-volume">
+					<div class="volume-column" >
+							<div class="volume-slider" {{bind-attr volume=volume}}>
+
+							</div>
+					</div>
+					<div class="volume-column" >
+							<!--TODO volume level -->
+					</div>
+				</div>
+			</div>
+			<div class="label-section">
+				{{name}}
+			</div>
+</div>
