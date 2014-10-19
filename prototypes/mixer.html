@@ -7,11 +7,11 @@
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/redmond/jquery-ui.css">
   <style type="text/css">
   	html, body {
-  		height: 100%
+  		height: 100%;
   	}
   	
   	.ember-view {
-			height: 100%
+			height: 100%;
 		}
   	
   	.mixer {
@@ -24,7 +24,7 @@
 			-webkit-flex-flow: row wrap;
 			flex-flow: row wrap;
 			max-height: 655px;
-			border-bottom: 1px solid #bbb
+			border-bottom: 1px solid #bbb;
 		}
 		
 		.master-track {
@@ -43,13 +43,13 @@
 			flex: 1;
 			display: flex;
 			flex-direction: row;
-			overflow-x: scroll
+			overflow-x: scroll;
 		}
 		
 		.track {	
 			float:left; 
 			border-right: 1px solid #bbb;
-			text-align: center
+			text-align: center;
 		}
 		
 		.track div {
@@ -78,19 +78,19 @@
 		.output-section {
 			flex: 1;
 			display: flex;
-			flex-direction: column
+			flex-direction: column;
 		}
 		
 		.label-section {
 			flex: 0 0 30px;
-			border-top: 1px solid #bbb
+			border-top: 1px solid #bbb;
 		}
 		
 		.track-volume {
 			display: flex;  
 			flex-direction: row;
 			/* TODO: Temporary fix for knob canvas being too long */
-			z-index: 500
+			z-index: 500;
 		}
 		
 		.volume-column {
@@ -107,16 +107,16 @@
 		}
 
 		.output-section .track-volume {
-			flex: 1
+			flex: 1;
 		}
 		
 		.single-button button {
-			width: 100%
+			width: 100%;
 		}
 		
 		.track-toggles {
 			/* TODO: Temporary fix for knob canvas being too long */
-			z-index: 500
+			z-index: 500;
 		}
 	
   </style>
@@ -169,6 +169,14 @@
 		</div>
 	</script>
 	
+	<script type="text/x-handlebars" data-template-name="tracks">
+		<div class="tracks">
+			{{#each}}
+				{{render "track" this}}
+			{{/each}}
+		</div>
+	</script>
+	
 	<script type="text/x-handlebars" data-template-name="mixer">
 		<div class="mixer">
 			<div class="mixer-labels mixer-col">
@@ -176,11 +184,7 @@
 				<div class="effects-section">Effects</div>
 				<div class="output-section">Output</div>
 			</div>
-			<div class="tracks">
-			{{#each tr in tracks}}
-				{{render "track" tr}}
-			{{/each}}
-			</div>
+			{{render "tracks" model}}
 			<div class="master-track mixer-col">
 			Master
 				<div class="input-section">&nbsp;</div>
@@ -252,43 +256,25 @@
 				}
 			});
 			
-			//TODO: This is probably the right way to create jQuery elements
-			// but it changes the height of the tracks (?)
-			/*App.TrackView = Ember.View.extend({
-				classNames: ["help-please"],
+			App.TrackView = Ember.View.extend({
 				didInsertElement: function() {
-					this.$('.mixer-knob')
-						.attr('data-min', '-100')
-						.attr('data-max', '100')
-						.attr('data-angleOffset', '-180')
-						.attr('data-width', '75')
-						.attr('data-cursor', true)
-						.knob();
-				}	
-			});*/
-			
-			//TODO: this is definitely the wrong way to create jQuery elements, 
-			// but it doesn't screw with layout
-			setTimeout(function() {
-				$('.mixer-knob')
-						.attr('data-min', '-100')
-						.attr('data-max', '100')
-						.attr('data-angleOffset', '-180')
-						.attr('data-width', '75')
-						.attr('data-cursor', true)
-						.attr('data-fgColor', '#5C9CCC')
-						.knob();
-						
-						if (sliderOn) {
-							$('.volume-slider').slider({
+						this.$('.mixer-knob')
+							.attr('data-min', '-100')
+							.attr('data-max', '100')
+							.attr('data-angleOffset', '-180')
+							.attr('data-width', '75')
+							.attr('data-cursor', true)
+							.knob();
+							
+						this.$('.volume-slider').slider({
 								orientation: 'vertical',
 								range: 'min',
 								min: 0,
 								max: 100,
 								value: 35
 							});
-						}
-			}, 500);
+				}	
+			});
 		
 			App.Track = DS.Model.extend({
 				name: DS.attr('string'),
@@ -301,18 +287,6 @@
 				solo: DS.attr('boolean'),
 				mute: DS.attr('boolean')
 			});
-		
-			/*var fixtures = [];
-			for(var i = 0; i < 30; i++) {
-				fixtures.push({
-					id: i,
-					volume: 10,
-					name: 'Track' + i
-				});
-			} 
-			App.Track.FIXTURES = fixtures;*/
-			
-			
 			
 			App.Track.FIXTURES = [
 				{
@@ -352,12 +326,19 @@
 					mute: false
 				}
 			];
-
+			
 			App.MixerController = Ember.ObjectController.extend({
-				tracks: function() {
-					return this.store.all('track');
-				}.property('tracks')
+				
 			});
+			
+			App.TrackController = Ember.ObjectController.extend({
+			
+			});
+			
+			App.TracksController = Ember.ArrayController.extend({
+				
+			});
+			
 		});
   </script>
 </body>
