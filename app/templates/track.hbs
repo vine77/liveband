@@ -1,31 +1,39 @@
 <div class="track mixer-col">
 			<div class="input-section single-button">
-				<button type="button" class="btn btn-default">
-					{{input.label}}
-				</button>
+        {{#unless master}}
+          <button type="button" class="btn btn-default">
+            {{input.label}}
+          </button>
+        {{/unless}}
 			</div>
 			<div class="effects-section">
-				{{#each effects}}
-					<div class="single-button">
-						<button type="button" class="btn btn-primary">
-						{{label}}
-						</button>
-					</div>
-				{{/each}}
+        {{#unless master}}
+				  {{#each effects}}
+            <div class="single-button">
+              <button type="button" class="btn btn-primary">
+              {{label}}
+              </button>
+            </div>
+				  {{/each}}
+        {{/unless}}
 			</div>
 			<div class="output-section">
 				<div class="output-button-row single-button">
-					<button type="button" class="btn btn-default">
-					{{output.label}}
-					</button>
+          {{#unless master}}
+            <button type="button" class="btn btn-default">
+            {{output.label}}
+            </button>
+          {{/unless}}
 				</div>
 				<div class="knob">
           <!-- TODO: replace this with ember-knob helper -->
 					{{input value=leftRightBalance class="mixer-knob"}}
 				</div>
 				<div class="track-toggles">
-					<button type="button" class="btn btn-default">S</button>
-					<button type="button" class="btn btn-default">M</button>
+          {{#unless master}}
+            <button type="button" {{action 'solo'}} {{bind-attr class=":btn :btn-default solo:btn-success"}}>S</button>
+            <button type="button" {{action 'mute'}} {{bind-attr class=":btn :btn-default mute:btn-danger"}}>M</button>
+          {{/unless}}
 				</div>
 				<div class="track-volume">
 					<div class="volume-column" >
@@ -39,6 +47,14 @@
 				</div>
 			</div>
 			<div class="label-section">
-				{{name}}
+        {{#if master}}
+          <label>{{name}}</label>
+        {{else}}
+          {{#if isEditing}}
+            {{input focus-out="saveName" insert-newline="saveName" value=name}}
+          {{else}}
+            <label {{action 'edit' on='click'}}>{{name}}</label>
+          {{/if}}
+        {{/if}}
 			</div>
 </div>

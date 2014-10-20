@@ -13,10 +13,7 @@
   background-color: white;
 
   .master-track {
-    width: 150px;
-    /*TODO: Finish master track*/
-    background-color: #2C6BA1;
-    font-weight: bold;
+    border-left: 1px solid #bbb;
   }
 
   .mixer-col {
@@ -69,6 +66,11 @@
   .label-section {
     flex: 0 0 30px;
     border-top: 1px solid #bbb;
+
+    input {
+      max-width: 90px;
+      width: 90px;
+    }
   }
 
   .track-volume {
@@ -82,7 +84,7 @@
       flex: 1;
 
       .volume-slider {
-        height: 225px;
+        height: 220px;
       }
     }
   }
@@ -107,5 +109,24 @@
   .track-toggles {
     /* TODO: Temporary fix for knob canvas being too long */
     z-index: 500;
+  }
+
+  .add-track {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5px;
+  }
+
+  .tracks > .ember-view,
+  .add-track {
+    min-width: 105px
+  }
+
+  .add-track {
+    max-width: 105px;
+    padding: 0 100px;
   }
 }

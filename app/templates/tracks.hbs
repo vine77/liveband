@@ -1,5 +1,10 @@
 <div class="tracks">
   {{#each}}
-    {{render "track" this}}
+    {{#unless master}}
+      {{render "track" this}}
+    {{/unless}}
   {{/each}}
+  <div class="add-track">
+    <button {{action 'addTrack'}} type="button" class="btn btn-link">+ Add track</button>
+  </div>
 </div>
