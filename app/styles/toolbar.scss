@@ -30,4 +30,9 @@
     color: $control-font-color;
     border-radius: $border-radius-base;
   }
+  button.metronome {
+    i:last-of-type {
+      margin-left: -5px;
+    }
+  }
 }
