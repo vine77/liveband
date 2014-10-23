@@ -1,4 +1,22 @@
 #toolbar {
   padding: $padding;
   background-color: $gray-light;
+  display: -webkit-flex;
+  display: flex;
+  width: 100vw;
+  #toolbar-left {
+    -webkit-flex-basis: 320px;
+    flex-basis: 320px;
+    text-align: left;
+  }
+  #toolbar-middle {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    text-align: center;
+  }
+  #toolbar-right {
+    -webkit-flex-basis: 320px;
+    flex-basis: 320px;
+    text-align: right;
+  }
 }
