@@ -7,12 +7,12 @@ body > .application {
   align-items: stretch;
 }
 #header {
-  -webkit-flex-basis: 50px;
-  flex-basis: 50px;
+  -webkit-flex-basis: $header-height;
+  flex-basis: $header-height;
 }
 #toolbar {
-  -webkit-flex-basis: 53px;
-  flex-basis: 50px;
+  -webkit-flex-basis: $toolbar-height;
+  flex-basis: $toolbar-height;
 }
 #main {
   display: -webkit-flex;

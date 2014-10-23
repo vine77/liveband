@@ -1,6 +1,6 @@
 #toolbar {
   padding: $padding;
-  background-color: $gray-light;
+  background-color: $background-color;
   display: -webkit-flex;
   display: flex;
   width: 100vw;
@@ -18,5 +18,16 @@
     -webkit-flex-basis: 320px;
     flex-basis: 320px;
     text-align: right;
+  }
+  #position {
+    display: inline-block;
+    $position-padding: 10px;
+    padding: $position-padding;
+    height: $toolbar-height - $position-padding * 2;
+    line-height: (($toolbar-height - $position-padding * 2) / 2) - 2;
+    background-color: $control-background-color;
+    font-size: 20px;
+    color: $control-font-color;
+    border-radius: $border-radius-base;
   }
 }
