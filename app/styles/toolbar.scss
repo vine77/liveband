@@ -13,26 +13,59 @@
     -webkit-flex-grow: 1;
     flex-grow: 1;
     text-align: center;
+    #position {
+      display: inline-block;
+      $position-padding: 10px;
+      padding: $position-padding;
+      height: $toolbar-height - $position-padding * 2;
+      line-height: (($toolbar-height - $position-padding * 2) / 2) - 2;
+      background-color: $control-background-color;
+      font-size: 20px;
+      color: $control-font-color;
+      border-radius: $border-radius-base;
+    }
   }
   #toolbar-right {
     -webkit-flex-basis: 320px;
     flex-basis: 320px;
     text-align: right;
-  }
-  #position {
-    display: inline-block;
-    $position-padding: 10px;
-    padding: $position-padding;
-    height: $toolbar-height - $position-padding * 2;
-    line-height: (($toolbar-height - $position-padding * 2) / 2) - 2;
-    background-color: $control-background-color;
-    font-size: 20px;
-    color: $control-font-color;
-    border-radius: $border-radius-base;
-  }
-  button.metronome {
-    i:last-of-type {
-      margin-left: -5px;
+    > * {
+      vertical-align: top;
+    }
+    button.metronome {
+      i:last-of-type {
+        margin-left: -5px;
+      }
+    }
+    .volume {
+      display: inline-block;
+      $volume-width: 150px;
+      width: $volume-width;
+      > .progress {
+        height: 21px;
+        margin: 0;
+        $volume-padding: 5px;
+        padding: 5px;
+        background-color: $control-background-color;
+        .progress-bar {
+          float: none;
+          width: $volume-width - ($volume-padding * 2);
+          height: 5px;
+          background: linear-gradient(to right,
+            hsla(120, 70%, 40%, 1) 0%,
+            hsla(120, 70%, 40%, 1) 75%,
+            hsla(40, 100%, 50%, 1) 75%,
+            hsla(40, 100%, 50%, 1) 95%,
+            hsla(0, 80%, 40%, 1) 95%,
+            hsla(0, 80%, 40%, 1) 100%);
+          &:first-of-type {
+            margin-bottom: 1px;
+          }
+        }
+        .progress-bar-container {
+          overflow: hidden;
+        }
+      }
     }
   }
 }
