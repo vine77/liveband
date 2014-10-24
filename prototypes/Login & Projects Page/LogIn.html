@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Napkee export</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/datepicker.css">
+	<link rel="stylesheet" href="css/colorpicker.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/smoothness/jquery-ui-1.10.3.custom.min.css">
+	<link rel="stylesheet" href="css/jquery.orgchart.css">
+	<link rel="stylesheet" href="css/jquery.treeview.css">
+	
+	
+	<style type="text/css">
+	#napkeeCanvas {
+		position:absolute;
+		left:0px;
+		top:0px;
+	}
+	.napkeeComponent {
+		position:absolute;
+		white-space: nowrap;
+	}
+	.napkeeRelativeComponent {
+		position:absolute;
+		white-space: nowrap;
+	}
+	
+	
+#nap1c{
+	position:absolute;
+	left:14px;
+	top:85px;
+	width:856px;
+	height:55px;
+	z-index:1;
+	opacity:1.0;
+	filter:alpha(opacity=100);
+}
+#nap1table{
+	width:856px;
+	height:55px;
+	z-index:2;
+	display:inline-table;
+}
+
+#nap1label{
+	font-size: 24px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#nap2_0{
+	left:428px;
+	top:203px;
+	width:427px;
+	height:293px;
+	z-index:0;
+	background-color:#EEEEEE;
+	opacity:1.0;
+	filter:alpha(opacity=100);
+	border:1px solid #000;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+}
+	
+#nap2_1{
+	left:567px;
+	top:219px;
+	width:216px;
+	z-index:1;
+	background-color:#FFFFFF;
+	color:#000000;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#nap2_2{
+	left:567px;
+	top:311px;
+	width:141px;
+	z-index:2;
+	background-color:#FFFFFF;
+	color:#000000;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#nap2_3{
+	left:461px;
+	top:226px;
+	width:107.80000000000001px;
+	height:21px;
+	z-index:3;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:right;
+	color:#000000;
+}
+	
+#nap2_4{
+	left:461px;
+	top:315px;
+	width:107.80000000000001px;
+	height:21px;
+	z-index:4;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:right;
+	color:#000000;
+}
+	
+#nap2_5{
+	left:567px;
+	top:451px;
+	z-index:5;
+}
+
+#nap2_5.napkee {
+	width:72px;
+	height:29px;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+}
+
+	
+#nap2_6{
+	left:652px;
+	top:452px;
+	width:68px;
+	height:19px;
+	z-index:6;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:underline;
+}
+	
+#nap2_7{
+	left:567px;
+	top:265px;
+	width:216px;
+	z-index:7;
+	background-color:#FFFFFF;
+	color:#000000;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#nap2_8{
+	left:461px;
+	top:272px;
+	width:107.80000000000001px;
+	height:21px;
+	z-index:8;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:right;
+	color:#000000;
+}
+	
+#nap2_9{
+	left:567px;
+	top:360px;
+	width:141px;
+	z-index:9;
+	background-color:#FFFFFF;
+	color:#000000;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#nap2_10{
+	left:441px;
+	top:361px;
+	width:130.9px;
+	height:21px;
+	z-index:10;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:right;
+	color:#000000;
+}
+	
+#containernap2_11{
+	left:567px;
+	top:412px;
+	width:251px;
+	height:23px;
+	z-index:11;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+}
+	
+#nap2_12{
+	left:716px;
+	top:318px;
+	z-index:12;
+}
+	
+#nap2_13{
+	left:428px;
+	top:155px;
+	width:147px;
+	height:31px;
+	z-index:13;
+	font-size: 28px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:center;
+	color:#000000;
+}
+	
+#nap3_0{
+	left:29px;
+	top:201px;
+	width:384px;
+	height:150px;
+	z-index:0;
+	background-color:#EEEEEE;
+	opacity:1.0;
+	filter:alpha(opacity=100);
+	border:1px solid #000;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+}
+	
+#nap3_1{
+	left:154px;
+	top:216px;
+	width:194px;
+	z-index:1;
+	background-color:#FFFFFF;
+	color:#000000;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#nap3_2{
+	left:59px;
+	top:223px;
+	width:96.80000000000001px;
+	height:21px;
+	z-index:2;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:right;
+	color:#000000;
+}
+	
+#nap3_3{
+	left:154px;
+	top:304px;
+	z-index:3;
+}
+
+#nap3_3.napkee {
+	width:65px;
+	height:28px;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+}
+
+	
+#nap3_4{
+	left:230px;
+	top:305px;
+	width:105px;
+	height:19px;
+	z-index:4;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:underline;
+}
+	
+#nap3_5{
+	left:154px;
+	top:260px;
+	width:194px;
+	z-index:5;
+	background-color:#FFFFFF;
+	color:#000000;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#nap3_6{
+	left:59px;
+	top:267px;
+	width:96.80000000000001px;
+	height:21px;
+	z-index:6;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:right;
+	color:#000000;
+}
+	
+#nap3_7{
+	left:29px;
+	top:155px;
+	width:118px;
+	height:31px;
+	z-index:7;
+	font-size: 28px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:center;
+	color:#000000;
+}
+	
+#nap4_0{
+	left:29px;
+	top:405px;
+	width:384px;
+	height:91px;
+	z-index:0;
+	background-color:#EEEEEE;
+	opacity:1.0;
+	filter:alpha(opacity=100);
+	border:1px solid #000;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+}
+	
+#nap4_1{
+	left:154px;
+	top:418px;
+	width:194px;
+	z-index:1;
+	background-color:#FFFFFF;
+	color:#000000;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#nap4_2{
+	left:59px;
+	top:424px;
+	width:96.80000000000001px;
+	height:21px;
+	z-index:2;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:right;
+	color:#000000;
+}
+	
+#nap4_3{
+	left:154px;
+	top:456px;
+	z-index:3;
+}
+
+#nap4_3.napkee {
+	width:132px;
+	height:23px;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+}
+
+	
+#nap4_4{
+	left:29px;
+	top:368px;
+	width:257px;
+	height:31px;
+	z-index:4;
+	font-size: 28px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:center;
+	color:#000000;
+}
+	
+	</style>
+	
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="js/jquery.migration.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.swfobject.1-0.5.min.js"></script>
+    <script src="js/swfobject.js"></script>
+    <script src="js/jquery.sparkline.min.js"></script>
+    <script src="js/bootstrap-colorpicker.js"></script>
+    <script src="js/jquery.tools.min.js"></script>
+    <script src="js/holder.js"></script>
+    <script src="js/jquery.orgchart.min.js"></script>
+    <script src="js/jquery.treeview.min.js"></script>
+    <script src="js/jquery.tagcloud.min.js"></script>
+	
+  </head>
+  <body>
+  
+	
+
+
+	
+<div id="nap1c" class="napkeeComponent napkeeShape">
+<div id="nap1"></div>
+<table border="0" id="nap1table" class="napkeeComponent napkeeShapeTable" >
+	<tr>
+		<td align="center" valign="middle">
+			<span id="nap1label" class="napkeeShapeLabel">Liveband<br/></span>
+		</td>
+	</tr>
+</table>
+</div>
+	
+<div id="nap2_0" class="napkeeComponent napkeeCanvas"></div>
+	
+<input id="nap2_1" type="text" value="" class="napkeeComponent napkeeTextinput" />
+	
+<input id="nap2_2" type="text" value="" class="napkeeComponent napkeeTextinput" />
+	
+<span id="nap2_3" class="napkeeComponent napkeeLabel ">* Name:</span>
+	
+<span id="nap2_4" class="napkeeComponent napkeeLabel ">* Password:</span>
+	
+<button id="nap2_5" type="button" class="napkeeComponent napkeeButton btn">Sign up</button>
+	
+<a id="nap2_6" href="#" class="napkeeComponent napkeeLink">Learn more</a>
+	
+<input id="nap2_7" type="text" value="" class="napkeeComponent napkeeTextinput" />
+	
+<span id="nap2_8" class="napkeeComponent napkeeLabel ">* Email:</span>
+	
+<input id="nap2_9" type="text" value="" class="napkeeComponent napkeeTextinput" />
+	
+<span id="nap2_10" class="napkeeComponent napkeeLabel ">* Re&ndash;type password:</span>
+	
+<span id="containernap2_11" class="napkeeComponent napkeeCheckbox">
+	<label for="nap2_11" class="checkbox">
+	<input id="nap2_11" type="checkbox" />
+	I agree to the <u><font color=&quot;#085394&quot;>Terms of Use</font></u> and <u><font color=&quot;#085394&quot;>Privacy Policy</font></u>.</label>
+</span>
+	
+<button id="nap2_12" class="btn btn-mini napkeeComponent napkeeIcon"><i class="icon-question-sign"></i></button>
+	
+<span id="nap2_13" class="napkeeComponent napkeeTitle">Sign Up</span>
+	
+<div id="nap3_0" class="napkeeComponent napkeeCanvas"></div>
+	
+<input id="nap3_1" type="text" value="" class="napkeeComponent napkeeTextinput" />
+	
+<span id="nap3_2" class="napkeeComponent napkeeLabel ">Email:</span>
+	
+<button id="nap3_3" type="button" class="napkeeComponent napkeeButton btn">Login</button>
+	
+<a id="nap3_4" href="#" class="napkeeComponent napkeeLink">Forgot password?</a>
+	
+<input id="nap3_5" type="text" value="" class="napkeeComponent napkeeTextinput" />
+	
+<span id="nap3_6" class="napkeeComponent napkeeLabel ">Password:</span>
+	
+<span id="nap3_7" class="napkeeComponent napkeeTitle">Login</span>
+	
+<div id="nap4_0" class="napkeeComponent napkeeCanvas"></div>
+	
+<input id="nap4_1" type="text" value="" class="napkeeComponent napkeeTextinput" />
+	
+<span id="nap4_2" class="napkeeComponent napkeeLabel ">Email:</span>
+	
+<button id="nap4_3" type="button" class="napkeeComponent napkeeButton btn">Get new password</button>
+	
+<span id="nap4_4" class="napkeeComponent napkeeTitle">Forgot Password</span>
+	
+	
+    <script type="text/javascript" charset="utf-8">
+	    function showMockup(url,params){
+			var finalUrl = url + "?";
+			if (params!=null){
+				jQuery.each(params, function(par, field){
+					finalUrl += par + "=" + $("#"+field).val() + "&";
+				});
+			}
+			location.href = finalUrl;
+		}
+		$(document).ready(function(){
+			$(".accordion").each(function(){
+				var _acc = $(this);
+				_acc.find(".accordion-inner").height(_acc.height() - (_acc.find(".accordion-inner").length * 36));
+			});
+			$(document).on("click", function(e){
+				$("[data-date]").datepicker('show');
+			});
+		
+			
+var flashvarsnap1 = {color:"14001853", borderColor:"", rotation:"0"};
+var paramsnap1 = {wmode: "transparent"};
+var attributesnap1 = {};
+swfobject.embedSWF("swf/NapkeeRectangle.swf", "nap1", "856", "55", "9.0.0", false, flashvarsnap1, paramsnap1, attributesnap1);
+$("#nap1table").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#nap2_0").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#nap2_1").click(function(event){
+	event.stopPropagation();
+	event.preventDefault();
+});
+	
+$("#nap2_2").click(function(event){
+	event.stopPropagation();
+	event.preventDefault();
+});
+	
+$("#nap2_3").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#nap2_4").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#nap2_5").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#nap2_6").click(function(event){
+	event.preventDefault();
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#nap2_7").click(function(event){
+	event.stopPropagation();
+	event.preventDefault();
+});
+	
+$("#nap2_8").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#nap2_9").click(function(event){
+	event.stopPropagation();
+	event.preventDefault();
+});
+	
+$("#nap2_10").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#containernap2_11").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#nap2_12").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#nap2_13").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#nap3_0").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#nap3_1").click(function(event){
+	event.stopPropagation();
+	event.preventDefault();
+});
+	
+$("#nap3_2").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#nap3_3").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#nap3_4").click(function(event){
+	event.preventDefault();
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#nap3_5").click(function(event){
+	event.stopPropagation();
+	event.preventDefault();
+});
+	
+$("#nap3_6").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#nap3_7").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#nap4_0").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#nap4_1").click(function(event){
+	event.stopPropagation();
+	event.preventDefault();
+});
+	
+$("#nap4_2").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#nap4_3").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#nap4_4").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+		});
+	</script>
+  </body>
+</html>
