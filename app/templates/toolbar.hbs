@@ -32,13 +32,14 @@
     </div>
     <div class="volume">
       <div class="progress">
-        <div class="progress-bar-container" style="width:90%">
+        <div class="progress-bar-container" {{bind-attr style=masterVolumeLeftWidth}}>
           <div class="progress-bar"></div>
         </div>
-        <div class="progress-bar-container" style="width:100%">
+        <div class="progress-bar-container" {{bind-attr style=masterVolumeRightWidth}}>
           <div class="progress-bar"></div>
         </div>
       </div>
+      {{jqui-slider value=masterVolume min=0 max=maxVolume}}
     </div>
   </div>
 </div>

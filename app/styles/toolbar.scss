@@ -19,7 +19,7 @@
       padding: $position-padding;
       height: $toolbar-height - $position-padding * 2;
       line-height: (($toolbar-height - $position-padding * 2) / 2) - 2;
-      background-color: $control-background-color;
+      background-color: $control-dark-color;
       font-size: 20px;
       color: $control-font-color;
       border-radius: $border-radius-base;
@@ -38,15 +38,17 @@
       }
     }
     .volume {
-      display: inline-block;
       $volume-width: 150px;
+      $volume-padding: 5px;
+      display: inline-block;
       width: $volume-width;
-      > .progress {
+      margin-left: 10px;
+      .progress {
         height: 21px;
         margin: 0;
-        $volume-padding: 5px;
+
         padding: 5px;
-        background-color: $control-background-color;
+        background-color: $control-dark-color;
         .progress-bar {
           float: none;
           width: $volume-width - ($volume-padding * 2);
@@ -64,6 +66,24 @@
         }
         .progress-bar-container {
           overflow: hidden;
+        }
+      }
+      .ui-slider {
+        margin: $volume-padding;
+        border: none;
+        background: transparent;
+        cursor: ew-resize;
+        .ui-slider-handle {
+          width: 0;
+          height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-bottom: 12px solid $control-light-color;
+          border-top: none;
+          border-radius: 0;
+          background: transparent;
+          outline: none;
+          cursor: ew-resize;
         }
       }
     }
