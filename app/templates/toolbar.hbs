@@ -1,14 +1,45 @@
 <div id="toolbar">
-  <div class="btn-group">
-    <button type="button" class="btn btn-default"><i class="fa fa-play"></i></button>
-    <button type="button" class="btn btn-default"><i class="fa fa-stop"></i></button>
-    <button type="button" class="btn btn-default"><i class="fa fa-pause"></i></button>
-    <button type="button" class="btn btn-default" style="color:red;"><i class="fa fa-circle"></i></button>
+  <div id="toolbar-left">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default" title="Play"><i class="fa fa-play"></i></button>
+      <button type="button" class="btn btn-default" title="Stop"><i class="fa fa-stop"></i></button>
+      <button type="button" class="btn btn-default" title="Pause"><i class="fa fa-pause"></i></button>
+      <button type="button" class="btn btn-default" style="color:red;" title="Record"><i class="fa fa-circle"></i></button>
+    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default" title="Go to beginning"><i class="fa fa-fast-backward"></i></button>
+      <button type="button" class="btn btn-default" title="Step backward"><i class="fa fa-backward"></i></button>
+      <button type="button" class="btn btn-default" title="Step forward"><i class="fa fa-forward"></i></button>
+      <button type="button" class="btn btn-default" title="Go to end"><i class="fa fa-fast-forward"></i></button>
+    </div>
   </div>
-  <div class="btn-group">
-    <button type="button" class="btn btn-default"><i class="fa fa-fast-backward"></i></button>
-    <button type="button" class="btn btn-default"><i class="fa fa-backward"></i></button>
-    <button type="button" class="btn btn-default"><i class="fa fa-forward"></i></button>
-    <button type="button" class="btn btn-default"><i class="fa fa-fast-forward"></i></button>
+  <div id="toolbar-middle">
+    <div id="position">
+      <span id="position-bar">12.</span>
+      <span id="position-beat">3.</span>
+      <span id="position-div">1.</span>
+      <span id="position-tick">1</span>
+    </div>
+  </div>
+  <div id="toolbar-right">
+    <div class="btn-group inline-block">
+      <button type="button" class="btn btn-default" title="Loop"><i class="fa fa-refresh"></i></button>
+      <button type="button" class="btn btn-default" title="Count in"><i class="fa fa-arrow-circle-o-right"></i></button>
+      <button type="button" class="btn btn-default metronome" title="Metronome">
+        <i class="fa fa-circle"></i>
+        <i class="fa fa-circle-thin"></i>
+      </button>
+    </div>
+    <div class="volume">
+      <div class="progress">
+        <div class="progress-bar-container" {{bind-attr style=masterVolumeLeftWidth}}>
+          <div class="progress-bar"></div>
+        </div>
+        <div class="progress-bar-container" {{bind-attr style=masterVolumeRightWidth}}>
+          <div class="progress-bar"></div>
+        </div>
+      </div>
+      {{jqui-slider value=masterVolume min=0 max=maxVolume}}
+    </div>
   </div>
 </div>
