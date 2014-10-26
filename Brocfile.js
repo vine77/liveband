@@ -5,6 +5,11 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var app = new EmberApp({
   'ember-cli-jquery-ui': {
     'theme': 'redmond'
+  },
+  vendorFiles: {
+    'handlebars.js': {
+      production:  'bower_components/handlebars/handlebars.js'
+    }
   }
 });
 
