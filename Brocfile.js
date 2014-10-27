@@ -6,6 +6,9 @@ var app = new EmberApp({
   'ember-cli-jquery-ui': {
     'theme': 'redmond'
   },
+  'ember-cli-bootstrap-sass': {
+    'importBootstrapJS': true
+  },
   vendorFiles: {
     'handlebars.js': {
       production:  'bower_components/handlebars/handlebars.js'
