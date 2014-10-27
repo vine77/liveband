@@ -27,7 +27,7 @@ You will need the following things properly installed on your computer.
 
 ### Code Generators
 
-Make use of the many generators for code, try `ember help generate` for more details
+To see available code generators, run `ember help generate`. In addition to common generators like `ember generate route foo` and `ember generate template foo`, this project adds `ember generate style foo`.
 
 ### Running Tests
 
