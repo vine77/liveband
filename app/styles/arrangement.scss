@@ -1,4 +1,39 @@
 #arrangement {
-  padding: $padding;
   background-color: $gray-lighter;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  align-items: stretch;
+  $ruler-height: 30px;
+  .track-details {
+    -webkit-flex-basis: 200px;
+    flex-basis: 200px;
+    .arrangement-actions {
+      height: $ruler-height;
+      padding: 4px;
+    }
+    .track {
+      height: 100px;
+      padding: 4px;
+      background-color: grey;
+      border-bottom: 1px solid black;
+      border-right: 1px solid black;
+    }
+  }
+  .tracks {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    .ruler {
+      height: $ruler-height;
+      overflow: hidden;
+      background-color: $control-dark-color;
+      color: $control-font-color;
+    }
+    .track {
+      height: 100px;
+      background-image: url(images/waveform.svg);
+      border-bottom: 1px solid black;
+    }
+  }
 }
