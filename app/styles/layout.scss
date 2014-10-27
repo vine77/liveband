@@ -9,10 +9,14 @@ body > .application {
 #header {
   -webkit-flex-basis: $header-height;
   flex-basis: $header-height;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
 }
 #toolbar {
   -webkit-flex-basis: $toolbar-height;
   flex-basis: $toolbar-height;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
 }
 #main {
   display: -webkit-flex;
