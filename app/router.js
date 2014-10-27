@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('mixer');
   this.route('daw');
   this.route('projects');
+  this.route('signup');
 });
 
 export default Router;
