@@ -1,3 +1,8 @@
 html, body {
   background-color: $background-color;
 }
+button, .btn {
+  &:focus, &:active:focus {
+    outline: none;
+  }
+}

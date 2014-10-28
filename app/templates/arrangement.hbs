@@ -1,9 +1,13 @@
 <div id="arrangement">
   <div class="track-details">
-    <div class="arrangement-actions"><button type="button" class="btn btn-primary btn-xs" title="Add track"><i class="fa fa-plus"></i></button></div>
-    {{#each tracks}}
+    <div class="arrangement-actions"><button type="button" class="btn btn-xs" title="Add track" {{action "addTrack"}}><i class="fa fa-fw fa-plus"></i></button></div>
+    {{#each tracks itemController="track"}}
       <div class="track">
-        Track {{id}}
+        <div>{{name}}</div>
+        <div>
+          <button type="button" {{bind-attr class=":btn :btn-xs mute:btn-primary"}} title="Mute" {{action "mute"}}><i {{bind-attr class=":fa :fa-fw mute:fa-volume-off:fa-volume-up"}}></i></button>
+          <button type="button" {{bind-attr class=":btn :btn-xs solo:btn-warning"}} title="Solo" {{action "solo"}}><i class="fa fa-fw fa-headphones"></i></button>
+        </div>
       </div>
     {{/each}}
   </div>

@@ -1,13 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  tracks: [{
-    id: 1
-  }, {
-    id: 2
-  }, {
-    id: 3
-  }, {
-    id: 4
-  }]
+  needs: ['daw'],
+  model: Ember.computed.alias('controllers.daw.model'),
+  tracks: Ember.computed.filterBy('model', 'type', 'audio'),
+  actions: {
+    addTrack: function() {
+      return this.store.createRecord('track');
+    }
+  }
 });
