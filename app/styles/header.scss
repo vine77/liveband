@@ -1,10 +1,10 @@
 #header {
   background-color: $gray-lighter;
-  $header-line-height: 20px;
-  $header-padding: ($header-height - $header-line-height) / 2;
+  $header-padding: $header-height / 4;
+  line-height: $header-height;
   #brand {
     height: $header-height;
-    line-height: $header-line-height;
+    line-height: $header-height / 2;
     padding: $header-padding;
   }
   #navigation {
