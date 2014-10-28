@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/redmond/jquery-ui.css">
+				<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <style>
+            body {
+                font-family: arial, helvetica, times;
+                font-size: 14px;
+                margin: 0
+            }
+            
+            .left-pane,
+            .left-inline {
+            	width: 200px;
+            }
+            
+            .left-pane {
+            	float: left;
+            }
+            
+             #velocity-label {
+             	float: left;
+             }
+            
+            .left-inline {
+            	display: inline-block;
+            	margin-right: -4px;
+            }
+            
+            .right-pane {
+            	float: left;
+            	width: 800px;
+            }
+            
+            .full-height {
+            	height: 100%;
+            }
+            
+            .full-width {
+            	width: 100%;
+            }
+            
+            .piano-roll-top {
+            	height: 300px;
+            }
+            
+            #piano-roll-header {
+            	height: 30px;
+            	max-height: 30px;
+            	border-bottom: 2px solid #ccc;
+            }
+            
+            .piano-roll-content {
+            	height: 280px;
+            	max-height: 280px;
+            }
+            
+            #keys, #grid {
+            	position: relative;
+            }
+            
+            #keys {
+            	z-index: 20;
+            }
+            
+            #white-keys,
+            #black-keys,
+            #grid-rows,
+            #grid-cols,
+            #grid-drag-rows {
+            	position: absolute;
+            	top: 0px;
+            	width: 100%;
+            }
+            
+             /*
+             * Explanation of numbers...
+             * 12 keys total, 7 white keys per octave. Need a good
+             * number divisible by both: 252 (12 * 7 * 3)
+             *
+             * White key height = 252px / 7 keys = 36 (35px height + 1px border)
+             * Spacing between keys = size of black keys = 252px / 12 keys = 21px;
+             * 
+             * "Single" black keys get one extra space (21px) on top (c#, f#, g#)
+             * "Double" black keys get two extra sppes (42px) on top (d#, a#)
+             */
+            
+            .white-key {
+                height: 36px; /*bootstrap absorbs border*/
+                background-color: white;
+                border-bottom: 1px solid #ccc;
+            }
+            
+            .black-key {
+                height: 21px;
+                max-height: 21px;
+                background-color: black;
+                color: white;
+                width: 80px;
+            }
+            
+            .black-key.single {
+                margin-top: 21px; 
+            }
+            
+            .black-key.double {
+                margin-top: 42px;
+            }
+            
+            .grid-row, .grid-drag-row {
+                height: 21px; /*bootstrap absorbs border*/
+                position: relative;
+                border-bottom: 1px solid #ddd;
+	              background-color: white;
+            }
+            
+            .grid-drag-row {
+            	background-color: transparent;
+            }
+            
+            .grid-row.alt {
+                background-color: #eee;
+            }
+            
+            
+            #grid-cols {
+             white-space: nowrap;
+            }
+            
+            .grid-col {
+            	display: inline-block;
+            	width: 20px;
+            	border-left: 1px solid #ccc;
+            	height: 755px;;
+            }
+            
+            .midi-note {
+                display: inline-block;
+                height: 20px;
+                position: absolute;
+                z-index: 10;
+            }
+            
+            .midi-note,
+            .velocity-bar {
+            	background-color: #5C9CCC;
+            	border: 1px solid #555;
+            }
+            
+            .midi-note.selected,
+            .velocity-bar.selected {
+            	background-color: pink;
+            	z-index: 15;
+            }
+            
+            .form-group label {
+            	min-width: 55px;
+            }
+            
+            .form-group {
+            	padding-bottom: 10px;
+            	margin-left: 10px;
+            }
+            
+            .velocity-section {
+            	height: 130px;
+            	position: relative;
+            }
+            
+            .velocity-section .grid-row {
+            	height: 26px; /*height of velocity section divided by 5*/
+            }
+            
+            #velocity {
+            	position: absolute;
+            	top: 0;
+            }
+            
+            .blank {
+            	background-color: #bbb;
+            	z-index: 20;
+            }
+            
+            #blank-velocity {
+            	position: relative;
+            }
+            
+            .velocity-bar {
+            	position: absolute;
+            	bottom: 0;
+            	width: 10px;
+            	height: 30px;
+            }
+            
+            .form-control.one-third-input {
+            	width: 35px;
+            }
+            
+            .horizontal-scroll {
+           	  white-space: nowrap; 
+           	  overflow-y: auto; 
+           	  position: relative;
+            }
+            
+            .scroll-content {
+            	display: inline-block; 
+            	width: 800px;
+            }
+            
+            .form-control.full-width-input {
+            	width: 100px;
+            }
+            
+            #velocity-slider {
+            	float:left; 
+            	width: 105px; 
+            	margin-left: 10px; 
+            	margin-top: 4px;
+            }
+            
+            #keys-and-grid,
+            #piano-roll-header {
+            	border-left: 2px solid #ccc;
+            }
+        </style>
+    </head>
+    <body>
+    	<div class="piano-roll-top">
+				<div id="note-properties" class="full-height left-pane">
+						<form class="form-inline" role="form">
+							<div class="form-group">
+								<label for="snap">Snap</label>
+								<input type="checkbox" class="form-control" id="snap">
+								<!--TODO: Granularity -->
+							</div>
+							<div class="full-width form-group">
+								<label for="note">Note</label>
+								<input class="full-width-input form-control" id="note">
+							</div>
+							<div class="form-group">
+								<label for="start-measure">Start</label>
+								<input class="one-third-input form-control" id="start-measure">
+								<input class="one-third-input form-control" id="start-measure2">
+								<input class="one-third-input form-control" id="start-measure3">
+							</div>
+							<div class="form-group">
+								<label for="end-measure">End</label>
+								<input class="one-third-input form-control" id="end-measure">
+								<input class="one-third-input form-control" id="end-measure2">
+								<input class="one-third-input form-control" id="end-measure3">
+							</div>
+							<div class="form-group">
+								<div id="velocity-label"><label>Velocity</label></div>
+								<div id="velocity-slider" >
+							</div>
+							</div>
+						</form>
+				</div>
+			
+				<div class="full-height right-pane">
+					<div id="piano-roll-header" class="horizontal-scroll">
+						
+					</div>
+					<div id="keys-and-grid" class="horizontal-scroll">
+						<div id="keys" class="piano-roll-content left-inline">
+								<div id="white-keys" class="piano-roll-content">
+								</div>
+								<div id="black-keys" class="piano-roll-content">
+								</div>
+						</div>
+			
+						<div id="grid" class="piano-roll-content scroll-content" style="">
+							<div id="grid-rows">
+							</div>
+							<div id="grid-cols">
+							</div>
+							<div id="grid-drag-rows">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="piano-roll-bottom">
+				<div class="full-height left-pane">
+					&nbsp;
+				</div>
+				<div id="velocity-parent" class="full-height right-pane horizontal-scroll">
+						<div id="blank-velocity" class="velocity-section blank left-inline">
+						</div>
+			
+						<div class="velocity-section scroll-content">
+							<div id="velocity" class="velocity-section full-width">
+								
+							</div>
+						</div>
+				</div>
+			</div>
+    </body>
+    
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+    		//Three measures of Frere Jacque...
+    		var TEST_DATA = {
+    			'note-0': {
+    				tone:  'c5',
+    				start: '1.0.0', //measure.quarter_note.quarter_note_offset (0 to 99)
+    				end:   '1.1.0',
+    				velocity: 100 // 0 to 127
+    			},
+    			'note-1': {
+    				tone:  'd5',
+    				start: '1.1.0', 
+    				end:   '1.2.0',
+    				velocity: 100 
+    			},
+    			'note-2': {
+    				tone:  'e5',
+    				start: '1.2.0', 
+    				end:   '1.3.0',
+    				velocity: 100 
+    			},
+    			'note-3': {
+    				tone:  'c5',
+    				start: '1.3.0', 
+    				end:   '1.4.0',
+    				velocity: 100 
+    			},
+    			
+    			
+    			'note-4': {
+    				tone:  'c5',
+    				start: '2.0.0', 
+    				end:   '2.1.0',
+    				velocity: 100 
+    			},
+    			'note-5': {
+    				tone:  'd5',
+    				start: '2.1.0', 
+    				end:   '2.2.0',
+    				velocity: 100 
+    			},
+    			'note-6': {
+    				tone:  'e5',
+    				start: '2.2.0', 
+    				end:   '2.3.0',
+    				velocity: 100 
+    			},
+    			'note-7': {
+    				tone:  'c5',
+    				start: '2.3.0', 
+    				end:   '2.4.0',
+    				velocity: 100 
+    			},
+    			
+    			'note-8': {
+    				tone:  'e5',
+    				start: '3.0.0', 
+    				end:   '3.1.0',
+    				velocity: 100 
+    			},
+    			'note-9': {
+    				tone:  'f5',
+    				start: '3.1.0', 
+    				end:   '3.2.0',
+    				velocity: 100 
+    			},
+    			'note-10': {
+    				tone:  'g5',
+    				start: '3.2.0', 
+    				end:   '3.3.0',
+    				velocity: 100 
+    			},
+    			
+    			'note-11': {
+    				tone:  'e5',
+    				start: '4.0.0', 
+    				end:   '4.1.0',
+    				velocity: 100 
+    			},
+    			'note-12': {
+    				tone:  'f5',
+    				start: '4.1.0', 
+    				end:   '4.2.0',
+    				velocity: 100 
+    			},
+    			'note-13': {
+    				tone:  'g5',
+    				start: '4.2.0', 
+    				end:   '4.3.0',
+    				velocity: 100 
+    			}
+    		};
+    		
+        $(function() {
+        		var numNotes = 0;
+		    		var numCols = 0;
+		    		var selectedNote = null;
+		    		
+            //TODO: "Intelligent" snapping to left/right grid
+            //TODO: Cannot click white key space between black keys (not a big deal)
+            //TODO: Markers
+            //TODO: Zoom
+            //TODO: Change resolution
+            //TODO: Document *magic* numbers
+            
+            var NUM_WHITE_KEYS = 21;
+            var NUM_BLACK_KEYS = 15;
+            var CREATE_OFFSET = 
+            		parseInt($('#note-properties').css('width')) +
+            		parseInt($('#keys').css('width')) + 2 /*border-left on piano keys*/;
+            
+            var currentNoteEditing = null;
+            var mouseIsDown = false;
+            var doNotDraw = false;
+            var foreignScroll = false;
+            
+            makeKeys();
+            makeGrid();
+            makeVelocityRows(); 
+            makeVelocitySlider();
+            addNotes(TEST_DATA);
+            
+            function addNotes(data) {
+            	for (var key in data) {
+            		if (!key)
+            			continue;
+            		
+            		var note = data[key];
+            		var gridRow = getGridRowFromTone(note.tone);
+            		var startX = getXPosFromTime(note.start);
+            		var endX = getXPosFromTime(note.end);
+            		var width = endX - startX;
+            		var noteEl = createNote(gridRow, startX, width);
+            		$(noteEl).attr('id', key);
+            		addVelocityMarker(noteEl, key.substr(5), note.velocity);
+            		numNotes++;
+            	}
+            }
+            
+            function getGridRowFromTone(tone) {
+            	return $('#grid-drag-row-' + tone);
+            }
+            
+            function getXPosFromTime(noteTime) {
+            	//TODO: This should be based on whether 3/4, 4/4, whatever
+            	//      For now, assume 4/4
+            	
+            	var parts = noteTime.split('.');
+            	var measure = parts[0];
+            	var quarterNote = parts[1];
+            	var qNoteOffset = parts[2];
+            	
+            	var gridColWidth = parseInt($('.grid-col').css('width'));
+
+            	// each grid line represents a quarter note
+            	// assume four beats per measure 
+            	// (4/4)
+            	var numBeatsPerMeasure = 4; 
+            	var xOffset = parseInt(measure) * gridColWidth * numBeatsPerMeasure;
+            	xOffset += parseInt(quarterNote) * gridColWidth;
+            	
+            	//quarter note offset goes from 0 to 99
+            	xOffset += Math.round((gridColWidth / 100) * parseInt(qNoteOffset));
+            	
+            	return xOffset;
+            }
+            
+            function makeVelocitySlider() {
+            	$( "#velocity-slider" ).slider();
+            }
+            
+            function syncScroll(el) {
+	            if(foreignScroll) {
+								foreignScroll = false;
+								return;
+							}
+            	var scrollLeft = el.scrollLeft;
+            	var originalWidth = parseInt($('#grid').css('width'));
+            	
+            	var colWidth = parseInt($('.grid-col').css('width'));
+            	var numExistingCols = $('.grid-col').length;
+            	var nunNeededCols = Math.ceil((originalWidth + scrollLeft) / colWidth);
+            	addColumns(nunNeededCols - numExistingCols);
+
+            	$('#keys').css('left', scrollLeft);
+            	$('#blank-velocity').css('left', scrollLeft);
+							$(".grid-row").css('width', originalWidth + scrollLeft);
+							$(".grid-drag-row").css('width', originalWidth + scrollLeft);	
+							
+							if ($(el).attr('id') == 'keys-and-grid') {
+								foreignScroll = true
+								$('#velocity-parent').scrollLeft(scrollLeft);
+							}
+							else if ($(el).attr('id') == 'velocity-parent') {
+								foreignScroll = true;
+								$('#keys-and-grid').scrollLeft(scrollLeft);
+							}
+            }
+            
+            $("#keys-and-grid").scroll(function(evt) {
+	            	syncScroll(this);
+            });
+            
+            $('#velocity-parent').scroll(function(evt) {
+	            	syncScroll(this);
+            });
+            
+            function addColumns(numColumns) {
+            	if (numColumns > 0) {
+            		for(var i = 0; i < numColumns; i++)
+            			addColumn();
+            	}
+            	else {
+            		numColumns = Math.abs(numColumns);
+            		for(var i = 0; i < numColumns; i++)
+            			removeColumn();
+            	}
+            }
+            
+            function addColumn() {
+            	var id = numCols++;
+            	$('<div class="grid-col snap"></div>')
+            		.appendTo('#grid-cols')
+            		.attr('id', 'grid-col-' + id);
+            }
+            
+            function removeColumn() {
+            	var cols = $('.grid-col');
+            	if (cols.length > 0) {
+	            	cols[cols.length - 1].remove();
+	            	numCols--;
+	            }
+            }
+            
+            function makeVelocityRows() {
+            	for (var i = 0; i < 5 ; i++) {
+                   $('<div class="grid-row"></div>').appendTo('#velocity');
+               }
+            }
+            
+            function selectNote(el) {
+            	var id = el.attr('id').substr(5);
+            	el.addClass('selected');
+            	$('#velocity-' + id).addClass('selected');
+							selectedNote = el;
+            }
+            
+            function unselectNote(el) {
+	            var id = el.attr('id').substr(5);
+            	el.removeClass('selected');
+            	$('#velocity-' + id).removeClass('selected');
+            	selectedNote = null;
+            }
+            
+            function setSelectedNote(el) {
+            	if(selectedNote)
+            		unselectNote(selectedNote);
+							selectNote(el);
+            }
+            
+            function createNote(gridRow, xPos, width) {
+            	width = width || null;
+            	var note = $('<div class="midi-note"></div>')
+								.css('left', xPos + 'px')
+								.appendTo(gridRow)
+								.mousedown(function() {
+										currentNoteEditing = null;
+										doNotDraw = true;
+										setSelectedNote($(this));
+								})
+								.draggable({ 
+									snap: ".snap",
+									stop: function(evt, ui) {
+										var id = $(this).attr('id').substr(5);
+										$('#velocity-' + id).css('left', $(this).css('left'))
+									}
+								})
+								.resizable({ 
+									handles: "e, w",
+									stop: function(evt, ui) {
+										var id = $(this).attr('id').substr(5);
+										$('#velocity-' + id).css('left', $(this).css('left'))
+									}
+								});
+							if (width) {
+								note.css('width', width + 'px');
+							}
+							return note;
+            }
+            
+            function makeGrid() {
+            	 var tones = ['b', 'aS', 'a', 'gS', 'g', 'fS', 'f', 'e', 'dS', 'd', 'cS', 'c'];
+            	 var octaves = [5, 4, 3, 2, 1];
+            	 
+               for (var i = 0; i < NUM_WHITE_KEYS + NUM_BLACK_KEYS ; i++) {
+									var alt = i % 2 == 0 ? ' alt' : '';
+									var keyTone = tones[i % tones.length];
+									var octave = octaves[parseInt(i / tones.length)];
+									var label = keyTone + octave;
+
+									$('<div class="grid-row' + alt + '"></div>').appendTo('#grid-rows');
+									$('<div id="grid-drag-row-' + label + '" class="grid-drag-row snap"></div>').appendTo('#grid-drag-rows');
+               }
+               
+               for (var i = 0; i < 36; i++) {
+               		addColumn();
+               }
+                $('.grid-drag-row').mousedown(function(evt) {
+                    if (doNotDraw == false) {
+											mouseIsDown = true;
+											var xPos = evt.clientX - CREATE_OFFSET + $('#keys-and-grid').scrollLeft(); 
+											currentNoteEditing = createNote($(this), xPos);
+                    }
+                });
+                
+                $('.grid-drag-row').mousemove(function(evt){
+                    if (!mouseIsDown || currentNoteEditing == null)
+											return;
+
+                    var noteLeftPos = parseFloat(currentNoteEditing.css('left'));    
+                    var xPos = evt.clientX - CREATE_OFFSET + $('#keys-and-grid').scrollLeft();
+                    var newWidth = xPos - noteLeftPos;
+                    currentNoteEditing.css('width', newWidth + 'px');
+                });
+
+                $('#grid').mouseup(function(evt){
+                    if (currentNoteEditing != null) {
+                        var noteWidth = parseFloat(currentNoteEditing.css('width'));
+                        if (noteWidth <= 2)
+                            currentNoteEditing.remove();
+                        else {
+                        	var id = numNotes++;
+                        	currentNoteEditing.attr('id', 'note-' + id);
+                        	addVelocityMarker(currentNoteEditing, id)
+                        	setSelectedNote(currentNoteEditing);
+                        }
+                        currentNoteEditing = null;
+                    }
+                    doNotDraw = false;
+                    mouseIsDown = false;
+                });
+            }
+            
+            function addVelocityMarker(note, id, velocity) {
+            	velocity = velocity || 63;
+            	var noteLeftPos = note.css('left');
+            	var velocityBar = $('<div id="velocity-' + id + '"class="velocity-bar"></div>')
+            		.appendTo('#velocity')
+            		.resizable({ handles: "n", maxHeight: 127 })
+            		.bind("resize", function () {
+										$(this).css("top", "auto");
+								})
+								.mousedown(function() {
+									var id = $(this).attr('id').substr(9);
+									var selectNote = $('#note-' + id);
+									setSelectedNote(selectNote);
+								});
+            	velocityBar.css('left', noteLeftPos);
+            	velocityBar.css('height', velocity + 'px');
+            }
+            
+            function makeKeys() {
+                makeWhiteKeys();
+                makeBlackKeys();
+            }
+        
+            function makeWhiteKeys() {
+                var tones = ['b', 'a', 'g', 'f', 'e', 'd', 'c'];
+                var octaves = [5, 4, 3, 2, 1];
+                
+                for(var i = 0; i < NUM_WHITE_KEYS; i++) {
+                    var keyTone = tones[i % tones.length];
+                    var octave = octaves[parseInt(i / tones.length)];
+                    var label = keyTone + octave;
+                    
+                    $('<div class="white-key" id="key-' + label + '"></div>').appendTo('#white-keys');
+                }
+                
+                $('.white-key').click(function(){    
+                    //play note?
+                })
+            }
+
+            function makeBlackKeys() {
+                var tones = ['aS', 'gS', 'fS', 'dS', 'cS'];
+                var offsets = ['double', 'single', 'single', 'double', 'single'];
+                
+                var octaves = [5, 4, 3, 2, 1];
+                for(var i = 0; i < NUM_BLACK_KEYS; i++) {
+                    var keyTone = tones[i % tones.length];
+                    var octave = octaves[parseInt(i / tones.length)];
+                    var label = keyTone + octave;
+                    var cl = i == 0 ? 'single' : offsets[i % tones.length];
+                    
+                    $( '<div id="key-' + label + '" class="black-key ' + cl + '"></div>').appendTo('#black-keys'); 
+                }
+                
+                $('.black-key').click(function(){    
+                    //play note?
+                })
+            }
+        });
+    </script>
+</html>
+
