@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	
+	<!-- https://pedals.io/ -->
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/redmond/jquery-ui.css">
+    
+	<style type="text/css">
+		
+		ul {
+			overflow:hidden;
+	  	}
+		li{
+		  text-align:center;
+		  border:1px solid #bbb;
+		  padding:5px;
+		  margin:5px;
+		  float:left;
+		  display:inline;
+		}
+	
+	</style>
+	
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ember.js/1.7.0/ember.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ember-data.js/1.0.0-beta.11/ember-data.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/jquery.knob/1.2.11/jquery.knob.min.js"></script>
+
+</head>
+<body>
+	
+	<ul>
+		<li>
+			<p>Volume</p>
+			<input type="text" value="8" class="dial">
+		</li>
+		<li>
+			<p>Overdrive</p>
+			<input type="text" value="8" class="dial">
+		</li>
+		<li>
+			<p>Reverb</p>
+			<input type="text" value="8" class="dial">
+		</li>
+		<li>
+			<p>Cabinet</p>
+			<input type="text" value="8" class="dial">
+		</li>
+	</ul>
+
+	
+
+	
+	<script>
+	    $(function() {
+		
+	        $(".dial").attr('data-min', '0')
+				.attr('data-max', '10')
+				.attr('data-step', '1')
+				.attr('data-angleOffset', '-125')
+				.attr('data-angleArc', '250')
+				.attr('data-width', '150')
+				.attr('data-height', '150')				
+				.knob();
+	
+	
+	    });
+	</script>	
+
+
+</body>
+</html>
