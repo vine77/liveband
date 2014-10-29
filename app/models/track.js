@@ -1,6 +1,7 @@
 import DS from 'ember-data';
 
 var Track = DS.Model.extend({
+  rev: DS.attr('string'),
   name: DS.attr('string', {
     defaultValue: 'New track'
   }),
