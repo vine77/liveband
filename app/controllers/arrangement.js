@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
   tracks: Ember.computed.filterBy('model', 'type', 'audio'),
   actions: {
     addTrack: function() {
-      return this.store.createRecord('track');
+      return this.store.createRecord('track').save();
     }
   }
 });

@@ -1,5 +1,3 @@
-import DS from 'ember-data';
-
-export default EmberPouch.Adapter.extend({
-  db: new PouchDB('liveband')
+export default window.EmberPouch.Adapter.extend({
+  db: new window.PouchDB('liveband')
 });
