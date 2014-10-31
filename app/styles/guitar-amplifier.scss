@@ -1,11 +1,15 @@
 #guitar-amplifier{
-  background-color: white;
+	padding: $padding;
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+	background-color: $background-color-light;
   ul {
     overflow: hidden;
+    border: 1px solid #bbb;
+	width:820px;
   }
   li {
     text-align: center;
-    border: 1px solid #bbb;
     padding: 5px;
     margin: 5px;
     float: left;
