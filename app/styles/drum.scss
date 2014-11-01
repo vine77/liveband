@@ -1,0 +1,64 @@
+#drum {
+  padding: $padding;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  background-color: $background-color-light;
+
+		
+		ul{
+			background-color:red;
+			overflow:hidden;			
+			background-color:#878787;
+			
+			margin:0px;	
+			padding:0px;
+			vertical-align:middle;
+		}
+		
+		li{
+		  background-color:#262626;
+		  border: 2px solid #D5D5D5;
+		  border-radius: 5px;
+
+		  float:left;
+		  padding:20px;
+		  margin:5px;
+		  display:inline;
+		
+
+		}
+		
+		ul.tracker li{
+			border: 2px dashed #D5D5D5;
+			border-radius: 25px;
+			padding:20px;
+			
+		}
+		
+		ul.tracker li.header{
+			width:130px;
+			padding:0px;
+			border:0px;
+			background-color:#878787;
+			margin-top:13px;		
+		}
+		 
+		li.header{
+			background-color:#ADADAD;
+			
+		 	text-align:center;
+			width:130px;
+			padding:0px;			
+		}
+		
+		ul.tracker li.active{
+			border: 2px double green;
+			background-color:#52BA3F;
+		}
+		
+		ul li.active
+		{
+			background-color:#E58600;		
+		}
+
+}
