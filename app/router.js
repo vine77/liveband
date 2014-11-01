@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('projects');
   this.route('guitar-amplifier');
   this.route('signup');
+  this.route('drum');
 });
 
 export default Router;
