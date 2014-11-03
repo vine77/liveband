@@ -1,14 +1,20 @@
+---
 language: node_js
+
 sudo: false
+
 cache:
   directories:
-  - node_modules
+    - node_modules
+
 install:
-- npm install -g bower
-- npm install
-- bower install
+  - npm install -g bower
+  - npm install
+  - bower install
+
 script:
-- npm test
+  - npm test
+
 deploy:
   provider: heroku
   strategy: api
