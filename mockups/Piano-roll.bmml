@@ -156,10 +156,10 @@
         <icon>DotIcon%7Cxsmall</icon>
       </controlProperties>
     </control>
-    <control controlID="57" controlTypeID="com.balsamiq.mockups::CallOut" x="557" y="336" w="-1" h="-1" measuredW="163" measuredH="43" zOrder="26" locked="false" isInGroup="-1">
+    <control controlID="57" controlTypeID="com.balsamiq.mockups::CallOut" x="391" y="336" w="329" h="43" measuredW="280" measuredH="43" zOrder="26" locked="false" isInGroup="-1">
       <controlProperties>
         <backgroundAlpha>1</backgroundAlpha>
-        <text>Highlight%20selected%20note</text>
+        <text>Highlight%20selected%20note.%20Hold%20shift%20and%20drag%0Ato%20select%20multiple%20notes%20at%20one%20time</text>
       </controlProperties>
     </control>
     <control controlID="58" controlTypeID="com.balsamiq.mockups::CallOut" x="535" y="429" w="185" h="80" measuredW="185" measuredH="40" zOrder="27" locked="false" isInGroup="-1">
