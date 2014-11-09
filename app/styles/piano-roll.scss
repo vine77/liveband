@@ -164,7 +164,7 @@
   }
 
   #velocity {
-    /*position: absolute;*/
+    position: relative;
     top: 0;
   }
 
@@ -174,7 +174,7 @@
   }
 
   #blank-velocity {
-    /*position: relative;*/
+    position: relative;
   }
 
   .velocity-bar {
@@ -191,6 +191,9 @@
   .horizontal-scroll {
     white-space: nowrap;
     overflow-y: auto;
+    max-width: 800px;
+    width: 800px;
+    min-width: 800px;
     /*position: relative;*/
   }
 
@@ -213,5 +216,9 @@
   #keys-and-grid,
   #piano-roll-header {
     border-left: 2px solid #ccc;
+  }
+
+  #velocity-parent {
+    position: relative;
   }
 }

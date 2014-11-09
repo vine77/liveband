@@ -134,9 +134,13 @@ export default Ember.View.extend({
         var snapped = _this.$(this).data('ui-draggable').snapElements;
 
         /* Pull out only the snap targets that are "snapping": */
-        var snappedTo = _this.$.map(snapped, function(element) {
-          return element.snapping && _this.$(element.item).hasClass('grid-drag-row') ? element.item : null;
-        });
+        var snappedTo = [];
+        for(var i = 0; i < snapped.length; i++) {
+          var element = snapped[i];
+          if(element.snapping && _this.$(element.item).hasClass('grid-drag-row')) {
+            snappedTo.push(element.item);
+          }
+        }
 
         //always the 2nd row element, for some reason...
         var newGridRow = snappedTo.length === 3 ? snappedTo[0] : snappedTo[1];
@@ -230,7 +234,8 @@ export default Ember.View.extend({
 
   _deleteSelectedNote: function() {
     if (this.selectedNote) {
-      this.get('controller').deleteSelected();
+      //TODO
+      //this.get('controller').deleteSelected();
       this.$('#velocity-' + this.$(this.selectedNote).attr('id').substr(5)).remove();
       this.$(this.selectedNote).remove();
     }
@@ -248,7 +253,7 @@ export default Ember.View.extend({
   _listenForDelete: function() {
     var _this = this;
     this.$(document).keydown(function(evt) {
-      if (evt.keyCode === 68 /*D*/ && evt.ctrlKey && _this.selectedNote) {
+      if (evt.keyCode === 68 /*D*/ && evt.shiftKey && _this.selectedNote) {
         _this._deleteSelectedNote();
       }
     });
@@ -390,7 +395,7 @@ export default Ember.View.extend({
   },
 
   _syncScroll: function() {
-    /*var _this = this;
+    var _this = this;
     var foreignScroll = false;
 
     function syncScroll(el) {
@@ -426,8 +431,9 @@ export default Ember.View.extend({
     });
 
     this.$('#velocity-parent').scroll(function() {
+      console.log('syncing scroll');
       syncScroll(this);
-    });*/
+    });
   },
 
   _updateOffset: function() {
