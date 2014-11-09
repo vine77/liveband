@@ -1,0 +1,217 @@
+#piano-roll {
+  background-color: white;
+
+  .left-pane,
+  .left-inline {
+    width: 230px;
+  }
+
+  .left-pane {
+    /*float: left;*/
+  }
+
+  #velocity-label {
+    float: left;
+  }
+
+  .left-inline {
+    display: inline-block;
+    margin-right: -4px;
+  }
+
+  .right-pane {
+    /*float: left;*/
+    width: 800px;
+  }
+
+  .full-height {
+    height: 100%;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .piano-roll-top {
+    height: 300px;
+  }
+
+  #piano-roll-header {
+    height: 30px;
+    max-height: 30px;
+    border-bottom: 2px solid #ccc;
+  }
+
+  .piano-roll-content {
+    height: 280px;
+    max-height: 280px;
+  }
+
+  #keys, #grid {
+    position: relative;
+  }
+
+  #keys {
+    z-index: 20;
+  }
+
+  #white-keys,
+  #black-keys,
+  #grid-rows,
+  #grid-cols,
+  #grid-drag-rows {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+  }
+
+  /*
+  * Explanation of numbers...
+  * 12 keys total, 7 white keys per octave. Need a good
+  * number divisible by both: 252 (12 * 7 * 3)
+  *
+  * White key height = 252px / 7 keys = 36 (35px height + 1px border)
+  * Spacing between keys = size of black keys = 252px / 12 keys = 21px;
+  *
+  * "Single" black keys get one extra space (21px) on top (c#, f#, g#)
+  * "Double" black keys get two extra sppes (42px) on top (d#, a#)
+  */
+
+  .white-key {
+    height: 36px; /*bootstrap absorbs border*/
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .black-key {
+    height: 21px;
+    max-height: 21px;
+    background-color: black;
+    color: white;
+    width: 80px;
+  }
+
+  .black-key.single {
+    margin-top: 21px;
+  }
+
+  .black-key.double {
+    margin-top: 42px;
+  }
+
+  .grid-row, .grid-drag-row {
+    height: 21px; /*bootstrap absorbs border*/
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+  }
+
+  .grid-drag-row {
+    background-color: transparent;
+  }
+
+  .grid-row.alt {
+    background-color: #eee;
+  }
+
+
+  #grid-cols {
+    white-space: nowrap;
+  }
+
+  .grid-col {
+    display: inline-block;
+    width: 20px;
+    border-left: 1px solid #ccc;
+    height: 755px;;
+  }
+
+  .midi-note {
+    display: inline-block;
+    height: 20px;
+    position: absolute;
+    z-index: 10;
+  }
+
+  .midi-note,
+  .velocity-bar {
+    background-color: #5C9CCC;
+    border: 1px solid #555;
+  }
+
+  .midi-note.selected,
+  .velocity-bar.selected {
+    background-color: pink;
+    z-index: 15;
+  }
+
+  .form-group label {
+    min-width: 55px;
+  }
+
+  .form-group {
+    padding-bottom: 10px;
+    margin-left: 10px;
+  }
+
+  .velocity-section {
+    height: 130px;
+    /*position: relative;*/
+  }
+
+  .velocity-section .grid-row {
+    height: 26px; /*height of velocity section divided by 5*/
+  }
+
+  #velocity {
+    /*position: absolute;*/
+    top: 0;
+  }
+
+  .blank {
+    background-color: #bbb;
+    z-index: 20;
+  }
+
+  #blank-velocity {
+    /*position: relative;*/
+  }
+
+  .velocity-bar {
+    position: absolute;
+    bottom: 0;
+    width: 10px;
+    height: 30px;
+  }
+
+  .form-control.one-third-input {
+    width: 45px;
+  }
+
+  .horizontal-scroll {
+    white-space: nowrap;
+    overflow-y: auto;
+    /*position: relative;*/
+  }
+
+  .scroll-content {
+    display: inline-block;
+    width: 800px;
+  }
+
+  .form-control.full-width-input {
+    width: 143px;
+  }
+
+  #velocity-slider {
+    float:left;
+    width: 105px;
+    margin-left: 10px;
+    margin-top: 4px;
+  }
+
+  #keys-and-grid,
+  #piano-roll-header {
+    border-left: 2px solid #ccc;
+  }
+}

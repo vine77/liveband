@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('guitar-amplifier');
   this.route('signup');
   this.route('drum');
+  this.route('piano-roll');
 });
 
 export default Router;

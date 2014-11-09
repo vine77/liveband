@@ -1,0 +1,40 @@
+<div id="piano-roll">
+    <div id="piano-roll-top">
+        {{render "note-properties"}}
+        <div id="piano-roll-header" class="horizontal-scroll">
+
+        </div>
+        <div id="keys-and-grid" class="horizontal-scroll">
+            <div id="keys" class="piano-roll-content left-inline">
+                <div id="white-keys" class="piano-roll-content">
+                </div>
+                <div id="black-keys" class="piano-roll-content">
+                </div>
+            </div>
+
+            <div id="grid" class="piano-roll-content scroll-content">
+                <div id="grid-rows">
+                </div>
+                <div id="grid-cols">
+                </div>
+                <div id="grid-drag-rows">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="piano-roll-bottom">
+        <div class="full-height left-pane">
+            &nbsp;
+        </div>
+        <div id="velocity-parent" class="full-height right-pane horizontal-scroll">
+            <div id="blank-velocity" class="velocity-section blank left-inline">
+            </div>
+
+            <div class="velocity-section scroll-content">
+                <div id="velocity" class="velocity-section full-width">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

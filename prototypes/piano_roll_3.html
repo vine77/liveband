@@ -9,61 +9,61 @@
                 font-size: 14px;
                 margin: 0
             }
-            
+
             .left-pane,
             .left-inline {
               width: 230px;
             }
-            
+
             .left-pane {
               float: left;
             }
-            
+
              #velocity-label {
                float: left;
              }
-            
+
             .left-inline {
               display: inline-block;
               margin-right: -4px;
             }
-            
+
             .right-pane {
               float: left;
               width: 800px;
             }
-            
+
             .full-height {
               height: 100%;
             }
-            
+
             .full-width {
               width: 100%;
             }
-            
+
             .piano-roll-top {
               height: 300px;
             }
-            
+
             #piano-roll-header {
               height: 30px;
               max-height: 30px;
               border-bottom: 2px solid #ccc;
             }
-            
+
             .piano-roll-content {
               height: 280px;
               max-height: 280px;
             }
-            
+
             #keys, #grid {
               position: relative;
             }
-            
+
             #keys {
               z-index: 20;
             }
-            
+
             #white-keys,
             #black-keys,
             #grid-rows,
@@ -73,7 +73,7 @@
               top: 0px;
               width: 100%;
             }
-            
+
              /*
              * Explanation of numbers...
              * 12 keys total, 7 white keys per octave. Need a good
@@ -81,17 +81,17 @@
              *
              * White key height = 252px / 7 keys = 36 (35px height + 1px border)
              * Spacing between keys = size of black keys = 252px / 12 keys = 21px;
-             * 
+             *
              * "Single" black keys get one extra space (21px) on top (c#, f#, g#)
              * "Double" black keys get two extra sppes (42px) on top (d#, a#)
              */
-            
+
             .white-key {
                 height: 36px; /*bootstrap absorbs border*/
                 background-color: white;
                 border-bottom: 1px solid #ccc;
             }
-            
+
             .black-key {
                 height: 21px;
                 max-height: 21px;
@@ -99,126 +99,126 @@
                 color: white;
                 width: 80px;
             }
-            
+
             .black-key.single {
-                margin-top: 21px; 
+                margin-top: 21px;
             }
-            
+
             .black-key.double {
                 margin-top: 42px;
             }
-            
+
             .grid-row, .grid-drag-row {
                 height: 21px; /*bootstrap absorbs border*/
                 position: relative;
                 border-bottom: 1px solid #ddd;
                 background-color: white;
             }
-            
+
             .grid-drag-row {
               background-color: transparent;
             }
-            
+
             .grid-row.alt {
                 background-color: #eee;
             }
-            
-            
+
+
             #grid-cols {
              white-space: nowrap;
             }
-            
+
             .grid-col {
               display: inline-block;
               width: 20px;
               border-left: 1px solid #ccc;
               height: 755px;;
             }
-            
+
             .midi-note {
                 display: inline-block;
                 height: 20px;
                 position: absolute;
                 z-index: 10;
             }
-            
+
             .midi-note,
             .velocity-bar {
               background-color: #5C9CCC;
               border: 1px solid #555;
             }
-            
+
             .midi-note.selected,
             .velocity-bar.selected {
               background-color: pink;
               z-index: 15;
             }
-            
+
             .form-group label {
               min-width: 55px;
             }
-            
+
             .form-group {
               padding-bottom: 10px;
               margin-left: 10px;
             }
-            
+
             .velocity-section {
               height: 130px;
               position: relative;
             }
-            
+
             .velocity-section .grid-row {
               height: 26px; /*height of velocity section divided by 5*/
             }
-            
+
             #velocity {
               position: absolute;
               top: 0;
             }
-            
+
             .blank {
               background-color: #bbb;
               z-index: 20;
             }
-            
+
             #blank-velocity {
               position: relative;
             }
-            
+
             .velocity-bar {
               position: absolute;
               bottom: 0;
               width: 10px;
               height: 30px;
             }
-            
+
             .form-control.one-third-input {
               width: 45px;
             }
-            
+
             .horizontal-scroll {
-               white-space: nowrap; 
-               overflow-y: auto; 
+               white-space: nowrap;
+               overflow-y: auto;
                position: relative;
             }
-            
+
             .scroll-content {
-              display: inline-block; 
+              display: inline-block;
               width: 800px;
             }
-            
+
             .form-control.full-width-input {
               width: 143px;
             }
-            
+
             #velocity-slider {
-              float:left; 
-              width: 105px; 
-              margin-left: 10px; 
+              float:left;
+              width: 105px;
+              margin-left: 10px;
               margin-top: 4px;
             }
-            
+
             #keys-and-grid,
             #piano-roll-header {
               border-left: 2px solid #ccc;
@@ -253,7 +253,7 @@
           <div id="velocity-slider"></div>
         </div>
       </script>
-      
+
       <script type="text/x-handlebars" data-template-name="piano-roll">
         <div class="piano-roll-top">
           <div id="note-properties" class="full-height left-pane">
@@ -261,10 +261,10 @@
                 {{render "note-properties"}}
               </form>
           </div>
-      
+
           <div class="full-height right-pane">
             <div id="piano-roll-header" class="horizontal-scroll">
-            
+
             </div>
             <div id="keys-and-grid" class="horizontal-scroll">
               <div id="keys" class="piano-roll-content left-inline">
@@ -273,7 +273,7 @@
                   <div id="black-keys" class="piano-roll-content">
                   </div>
               </div>
-      
+
               <div id="grid" class="piano-roll-content scroll-content" style="">
                 <div id="grid-rows">
                 </div>
@@ -292,28 +292,28 @@
           <div id="velocity-parent" class="full-height right-pane horizontal-scroll">
               <div id="blank-velocity" class="velocity-section blank left-inline">
               </div>
-      
+
               <div class="velocity-section scroll-content">
                 <div id="velocity" class="velocity-section full-width">
-                
+
                 </div>
               </div>
           </div>
         </div>
       </script>
-      
-      
+
+
       <script type="text/x-handlebars" >
         {{render "piano-roll"}}
       </script>
     </body>
-    
+
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/ember.js/1.7.0/ember.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/ember-data.js/1.0.0-beta.11/ember-data.js"></script>
-    
+
     <script type="text/javascript">
         $(function() {
           App = Ember.Application.create();
@@ -321,9 +321,9 @@
           App.ApplicationAdapter = DS.FixtureAdapter.extend();
 
           App.ApplicationRoute = Ember.Route.extend({
-            
+
           });
-        
+
           App.Note = DS.Model.extend({
             tone: DS.attr('string'),
             startMeasure: DS.attr('number'),
@@ -334,7 +334,7 @@
             endOffset: DS.attr('number'),
             velocity: DS.attr('number')
           });
-        
+
           App.Note.FIXTURES = [
             {
               id: 1,
@@ -359,7 +359,7 @@
               velocity: 100
             }
           ];
-          
+
           App.NotePropertiesController = Ember.ObjectController.extend({
             deleteSelected: function() {
               //TODO:
@@ -367,7 +367,7 @@
               // console.log('working on it');
             }
           });
-          
+
           App.NotePropertiesView = Ember.View.extend({
             didInsertElement: function() {
               $( "#velocity-slider" ).slider({max: 127, disabled: true});
@@ -377,7 +377,7 @@
               $("#velocity-slider").slider('value', velocity);
             }.observes('controller.model.velocity')
           });
-        
+
           App.PianoRollController = Ember.ArrayController.extend({
             updateNote: function(note) {
               this.store.push('note', note);
@@ -395,10 +395,10 @@
               this.get('controllers.note-properties').deleteSelected();
               this.unselect();
             },
-            
+
             needs: 'note-properties'
           });
-          
+
           /*TODO:
               Long term:
                   "Intelligent" snapping to left/right grid
@@ -413,18 +413,18 @@
               Short term:
                   Update mockups
                   3rd number should be 8th note, 4th should be offset or 16th
-          */        
+          */
 
-          
+
           //TODO: (Mixer) new tracks have no input
           //TODO: (Mixer) rename std to master
-          
-          
+
+
           App.PianoRollView = Ember.View.extend({
             NUM_WHITE_KEYS: 21,
             NUM_BLACK_KEYS: 15,
             CREATE_OFFSET: 0, //updated in _updateOffset method
-            
+
             currentNoteEditing: null,
             doNotDraw: false,
             mouseIsDown: false,
@@ -432,14 +432,14 @@
             nextNoteId: 0,
             numCols: 0,
             // each grid line represents a quarter note
-            // assume four beats per measure 
+            // assume four beats per measure
             // (4/4)
             numBeatsPerMeasure: 4,
-            
+
             didInsertElement: function() {
               this._build();
             },
-            
+
             modelChanged: function() {
               var _this = this;
               var controller = this.get('controller');
@@ -449,14 +449,14 @@
                   _this._addNote(note);
                 });
               });
-              
+
             }.observes('controller.model'),
-            
+
             _updateModel: function(note) {
               var m = this._noteElementToModel(note);
               this.get('controller').updateNote(m);
             },
-            
+
             _noteElementToModel: function(note) {
               var left = parseInt(note.css('left'));
               var right = left + parseInt(note.css('width'));
@@ -466,7 +466,7 @@
               var velocityBar = $('#velocity-' + id);
               var velocity = parseInt(velocityBar.css('height'));
               var tone = note.parent().attr('id').substr(14);
-              
+
               var m = {
                 id: id,
                 startMeasure: start.measure,
@@ -480,7 +480,7 @@
               };
               return m;
             },
-            
+
             _addNote: function(note) {
               var gridRow = this._getGridRowFromTone(note.get('tone'));
               var startX = this._getXPosFromTime(note, 'start');
@@ -493,30 +493,30 @@
               if (id >= this.nextNoteId)
                 this.nextNoteId = id + 1;
             },
-            
+
             _getGridRowFromTone: function(tone) {
               return $('#grid-drag-row-' + tone);
             },
-            
+
             _getXPosFromTime: function(note, startOrEnd) {
               //TODO: This should be based on whether 3/4, 4/4, whatever
               //      For now, assume 4/4
-            
+
               var measure = note.get(startOrEnd + 'Measure');
               var quarterNote = note.get(startOrEnd + 'Quarter');
               var qNoteOffset = note.get(startOrEnd + 'Offset');
-            
+
               var gridColWidth = parseInt($('.grid-col').css('width'));
 
               var xOffset = parseInt(measure) * gridColWidth * this.numBeatsPerMeasure;
               xOffset += parseInt(quarterNote) * gridColWidth;
-            
+
               //quarter note offset goes from 0 to 99
               xOffset += Math.round((gridColWidth / 100) * parseInt(qNoteOffset));
-            
+
               return xOffset;
             },
-            
+
             _getTimeFromXPos: function(xPos) {
               var gridColWidth = parseInt($('.grid-col').css('width'));
               var measure = parseInt((xPos / gridColWidth) / this.numBeatsPerMeasure);
@@ -530,7 +530,7 @@
                 offset: offset
               };
             },
-            
+
             _createNote: function(gridRow, xPos, width) {
               width = width || null;
               var _this = this;
@@ -542,12 +542,12 @@
                     _this.doNotDraw = true;
                     _this._setSelectedNote($(this));
                 })
-                .draggable({ 
+                .draggable({
                   snap: ".snap",
                   stop: function(evt, ui) {
                     var id = $(this).attr('id').substr(5);
                     $('#velocity-' + id).css('left', $(this).css('left'));
-                    
+
                     //http://stackoverflow.com/questions/5177867/how-to-find-out-about-the-snapped-to-element-for-jquery-ui-draggable-elements
                     /* Get the possible snap targets: */
                     var snapped = $(this).data('ui-draggable').snapElements;
@@ -556,7 +556,7 @@
                     var snappedTo = $.map(snapped, function(element) {
                         return element.snapping && $(element.item).hasClass('grid-drag-row') ? element.item : null;
                     });
-                    
+
                     //always the 2nd row element, for some reason...
                     var newGridRow = snappedTo.length == 3 ? snappedTo[0] : snappedTo[1];
                     $(newGridRow).append($(this));
@@ -564,7 +564,7 @@
                     _this._updateModel($(this));
                   }
                 })
-                .resizable({ 
+                .resizable({
                   handles: "e, w",
                   stop: function(evt, ui) {
                     var id = $(this).attr('id').substr(5);
@@ -578,27 +578,27 @@
 
               return note;
             },
-            
+
             _setSelectedNote: function(el) {
               if ($(this.selectedNote).attr('id') == $(el).attr('id'))
                 return;
-                
+
               if(this.selectedNote)
                 this._unselectNote(this.selectedNote);
               if (el)
                 this._selectNote(el);
             },
-            
+
             _selectNote: function(el) {
               var id = el.attr('id').substr(5);
               el.addClass('selected');
               $('#velocity-' + id).addClass('selected');
               this._autoAdjustScroll(el);
-              
+
               this.selectedNote = el;
               this.get('controller').setSelected(parseInt(id));
             },
-            
+
             _autoAdjustScroll: function(el) {
               //TODO: *magic numbers -- noooooo*
               var top = el[0].getBoundingClientRect().top;
@@ -611,7 +611,7 @@
                 $("#keys-and-grid").animate({scrollTop: sc + 'px'});
               }
             },
-          
+
             _unselectNote: function(el) {
               var id = el.attr('id').substr(5);
               $(el).find('input').blur();
@@ -620,7 +620,7 @@
               this.selectedNote = null;
               this.get('controller').unselect(parseInt(id));
             },
-            
+
             _addVelocityMarker: function(note, id, velocity) {
               var _this = this;
               velocity = velocity || 63;
@@ -642,24 +642,24 @@
               velocityBar.css('left', noteLeftPos);
               velocityBar.css('height', velocity + 'px');
             },
-            
+
             _deleteSelectedNote: function() {
-              if (this.selectedNote) { 
+              if (this.selectedNote) {
                 this.get('controller').deleteSelected();
                 $('#velocity-' + $(this.selectedNote).attr('id').substr(5)).remove();
                 $(this.selectedNote).remove();
               }
             },
-            
+
             _build: function() {
               this._updateOffset();
               this._makeKeys();
               this._makeGrid();
-              this._makeVelocityRows(); 
+              this._makeVelocityRows();
               this._syncScroll();
               this._listenForDelete();
             },
-            
+
             _listenForDelete: function() {
               var _this = this;
               this.$(document).keydown(function(evt) {
@@ -667,12 +667,12 @@
                   _this._deleteSelectedNote();
               });
             },
-            
+
             _makeKeys: function() {
               this._makeWhiteKeys();
               this._makeBlackKeys();
             },
-            
+
             _makeGrid: function() {
               var _this = this;
               var tones = ['b', 'aS', 'a', 'gS', 'g', 'fS', 'f', 'e', 'dS', 'd', 'cS', 'c'];
@@ -694,7 +694,7 @@
               $('.grid-drag-row').mousedown(function(evt) {
                 if (_this.doNotDraw == false) {
                   _this.mouseIsDown = true;
-                var xPos = evt.clientX - _this.CREATE_OFFSET + $('#keys-and-grid').scrollLeft(); 
+                var xPos = evt.clientX - _this.CREATE_OFFSET + $('#keys-and-grid').scrollLeft();
                 _this.currentNoteEditing = _this._createNote($(this), xPos);
               }
               });
@@ -703,7 +703,7 @@
                 if (!_this.mouseIsDown || _this.currentNoteEditing == null)
                   return;
 
-                var noteLeftPos = parseFloat(_this.currentNoteEditing.css('left'));    
+                var noteLeftPos = parseFloat(_this.currentNoteEditing.css('left'));
                 var xPos = evt.clientX - _this.CREATE_OFFSET + $('#keys-and-grid').scrollLeft();
                 var newWidth = xPos - noteLeftPos;
                 _this.currentNoteEditing.css('width', newWidth + 'px');
@@ -729,20 +729,20 @@
                 _this.mouseIsDown = false;
               });
             },
-        
+
             _makeWhiteKeys: function() {
               var tones = ['b', 'a', 'g', 'f', 'e', 'd', 'c'];
               var octaves = [5, 4, 3, 2, 1];
-            
+
               for(var i = 0; i < this.NUM_WHITE_KEYS; i++) {
                 var keyTone = tones[i % tones.length];
                 var octave = octaves[parseInt(i / tones.length)];
                 var label = keyTone + octave;
-              
+
                 $('<div class="white-key" id="key-' + label + '"></div>').appendTo('#white-keys');
               }
-            
-              $('.white-key').click(function(){    
+
+              $('.white-key').click(function(){
                 //play note?
               })
             },
@@ -750,27 +750,27 @@
             _makeBlackKeys: function() {
               var tones = ['aS', 'gS', 'fS', 'dS', 'cS'];
               var offsets = ['double', 'single', 'single', 'double', 'single'];
-            
+
               var octaves = [5, 4, 3, 2, 1];
               for(var i = 0; i < this.NUM_BLACK_KEYS; i++) {
                 var keyTone = tones[i % tones.length];
                 var octave = octaves[parseInt(i / tones.length)];
                 var label = keyTone + octave;
                 var cl = i == 0 ? 'single' : offsets[i % tones.length];
-                $( '<div id="key-' + label + '" class="black-key ' + cl + '"></div>').appendTo('#black-keys'); 
+                $( '<div id="key-' + label + '" class="black-key ' + cl + '"></div>').appendTo('#black-keys');
               }
-            
-              $('.black-key').click(function(){    
+
+              $('.black-key').click(function(){
                 //play note?
               })
             },
-            
+
             _makeVelocityRows: function() {
               for (var i = 0; i < 5 ; i++) {
                 $('<div class="grid-row"></div>').appendTo('#velocity');
               }
             },
-            
+
             _addColumns: function(numColumns) {
               if (numColumns > 0) {
                 for(var i = 0; i < numColumns; i++)
@@ -782,14 +782,14 @@
                   this._removeColumn();
               }
             },
-            
+
             _addColumn: function() {
               var id = this.numCols++;
               $('<div class="grid-col snap"></div>')
                 .appendTo('#grid-cols')
                 .attr('id', 'grid-col-' + id);
             },
-            
+
             _removeColumn: function() {
               var cols = $('.grid-col');
               if (cols.length > 0) {
@@ -797,11 +797,11 @@
                 this.numCols--;
               }
             },
-            
+
             _syncScroll: function() {
               var _this = this;
               var foreignScroll = false;
-              
+
               function syncScroll(el) {
                 if(foreignScroll) {
                   foreignScroll = false;
@@ -809,7 +809,7 @@
                 }
                 var scrollLeft = el.scrollLeft;
                 var originalWidth = parseInt($('#grid').css('width'));
-              
+
                 var colWidth = parseInt($('.grid-col').css('width'));
                 var numExistingCols = $('.grid-col').length;
                 var numNeededCols = Math.ceil((originalWidth + scrollLeft) / colWidth);
@@ -818,8 +818,8 @@
                 $('#keys').css('left', scrollLeft);
                 $('#blank-velocity').css('left', scrollLeft);
                 $(".grid-row").css('width', originalWidth + scrollLeft);
-                $(".grid-drag-row").css('width', originalWidth + scrollLeft);  
-              
+                $(".grid-drag-row").css('width', originalWidth + scrollLeft);
+
                 if ($(el).attr('id') == 'keys-and-grid') {
                   foreignScroll = true
                   $('#velocity-parent').scrollLeft(scrollLeft);
@@ -829,18 +829,18 @@
                   $('#keys-and-grid').scrollLeft(scrollLeft);
                 }
               }
-            
+
               $("#keys-and-grid").scroll(function(evt) {
                   syncScroll(this);
               });
-            
+
               $('#velocity-parent').scroll(function(evt) {
                   syncScroll(this);
               });
             },
-            
+
             _updateOffset: function() {
-              this.CREATE_OFFSET = 
+              this.CREATE_OFFSET =
                   parseInt($('#note-properties').css('width')) +
                   parseInt($('#keys').css('width')) + 2 /*border-left on piano keys*/;
             }
