@@ -3,17 +3,25 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   updateNote: function(note) {
     this.store.push('note', note);
+    if (note) {
+      var notePropertiesController = this.get('controllers.note-properties');
+      notePropertiesController.send('setNote', note);
+    }
   },
+
   setSelected: function(noteId) {
-    var note = this.store.find('note', noteId);
-    console.log('note', note);
-    var notePropertiesController = this.get('controllers.note-properties');
-    notePropertiesController.set('model', note);
+    var _this = this;
+    this.store.find('note', noteId).then(function(data){
+      var notePropertiesController = _this.get('controllers.note-properties');
+      notePropertiesController.send('setNote', data);
+    });
   },
+
   unselect: function() {
     var notePropertiesController = this.get('controllers.note-properties');
-    notePropertiesController.set('model', null);
+    notePropertiesController.send('setNote', null);
   },
+
   deleteSelected: function() {
     this.get('controllers.note-properties').deleteSelected();
     this.unselect();

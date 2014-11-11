@@ -1,5 +1,5 @@
 #piano-roll {
-  background-color: white;
+  background-color: $background-color;
 
   .left-pane,
   .left-inline {
@@ -147,10 +147,10 @@
 
   .form-group label {
     min-width: 55px;
+    text-align: right;
   }
 
   .form-group {
-    padding-bottom: 10px;
     margin-left: 10px;
   }
 
@@ -203,7 +203,7 @@
   }
 
   .form-control.full-width-input {
-    width: 143px;
+    width: 68px;
   }
 
   #velocity-slider {
@@ -213,12 +213,28 @@
     margin-top: 4px;
   }
 
-  #keys-and-grid,
   #piano-roll-header {
-    border-left: 2px solid #ccc;
+    background-color: #bbb;
   }
 
   #velocity-parent {
     position: relative;
+  }
+
+  #note-properties {
+    max-width: 800px;
+    width: 800px;
+    min-width: 800px;
+
+    padding: $padding;
+    background-color: $background-color;
+    color: $control-font-color;
+
+    input {
+      background-color: $control-dark-color;
+      font-size: 20px;
+      color: $control-font-color;
+      border: none;
+    }
   }
 }

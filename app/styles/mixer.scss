@@ -27,12 +27,16 @@
 
   .track {
     float:left;
-    border-right: 1px solid #bbb;
     text-align: center;
     background-color: $track-background;
     border-right: $track-border;
+  }
 
-
+  .master-track {
+    .track {
+      border-right: none;
+      border-left: $track-border;
+    }
   }
 
   .track div {

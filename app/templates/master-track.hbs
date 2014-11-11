@@ -1,5 +1,42 @@
-{{#each}}
-    {{#if master}}
-      {{render "track" this}}
-    {{/if}}
-  {{/each}}
+<div class="track mixer-col">
+			<div class="input-section single-button">
+
+			</div>
+			<div class="effects-section">
+
+			</div>
+			<div class="output-section">
+				<div class="output-button-row single-button">
+
+				</div>
+				<div class="knob">
+          <!-- TODO: replace this with ember-knob helper -->
+					{{input value=leftRightBalance class="mixer-knob"}}
+				</div>
+				<div class="track-toggles">
+
+				</div>
+				<div class="track-volume">
+					<div class="volume-column" >
+							<div class="volume-slider" {{bind-attr volume=volume}}>
+
+							</div>
+					</div>
+					<div class="volume-column" >
+							<div class="volume">
+                <div class="progress">
+                  <!--<div class="progress-bar-container" {{bind-attr style=volumeLeftHeight}}>
+                    <div class="progress-bar"></div>
+                  </div>
+                  <div class="progress-bar-container" {{bind-attr style=volumeRightHeight}}>
+                    <div class="progress-bar"></div>
+                  </div>-->
+                </div>
+              </div>
+					</div>
+				</div>
+			</div>
+			<div class="label-section">
+        <label>Master</label>
+			</div>
+</div>
