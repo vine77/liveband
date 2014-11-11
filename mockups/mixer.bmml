@@ -156,14 +156,14 @@
         <text/>
       </controlProperties>
     </control>
-    <control controlID="263" controlTypeID="com.balsamiq.mockups::Button" x="165" y="293" w="-1" h="-1" measuredW="31" measuredH="27" zOrder="13" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>S</text>
-      </controlProperties>
-    </control>
-    <control controlID="264" controlTypeID="com.balsamiq.mockups::Button" x="196" y="293" w="-1" h="-1" measuredW="33" measuredH="27" zOrder="14" locked="false" isInGroup="-1">
+    <control controlID="263" controlTypeID="com.balsamiq.mockups::Button" x="165" y="293" w="-1" h="-1" measuredW="33" measuredH="27" zOrder="13" locked="false" isInGroup="-1">
       <controlProperties>
         <text>M</text>
+      </controlProperties>
+    </control>
+    <control controlID="264" controlTypeID="com.balsamiq.mockups::Button" x="196" y="293" w="-1" h="-1" measuredW="31" measuredH="27" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>S</text>
       </controlProperties>
     </control>
     <control controlID="265" controlTypeID="com.balsamiq.mockups::RoundButton" x="167" y="229" w="60" h="60" measuredW="32" measuredH="32" zOrder="15" locked="false" isInGroup="-1">
@@ -193,18 +193,18 @@
         <text>Comp</text>
       </controlProperties>
     </control>
-    <control controlID="269" controlTypeID="com.balsamiq.mockups::Button" x="165" y="191" w="65" h="27" measuredW="43" measuredH="27" zOrder="19" locked="false" isInGroup="-1">
+    <control controlID="269" controlTypeID="com.balsamiq.mockups::Button" x="165" y="191" w="65" h="27" measuredW="65" measuredH="27" zOrder="19" locked="false" isInGroup="-1">
       <controlProperties>
         <color>16777215</color>
         <state>up</state>
-        <text>Std</text>
+        <text>Master</text>
       </controlProperties>
     </control>
-    <control controlID="270" controlTypeID="com.balsamiq.mockups::Button" x="165" y="18" w="65" h="27" measuredW="53" measuredH="27" zOrder="20" locked="false" isInGroup="-1">
+    <control controlID="270" controlTypeID="com.balsamiq.mockups::Button" x="165" y="18" w="65" h="27" measuredW="61" measuredH="27" zOrder="20" locked="false" isInGroup="-1">
       <controlProperties>
         <color>16777215</color>
         <state>up</state>
-        <text>Input</text>
+        <text>Select</text>
       </controlProperties>
     </control>
     <control controlID="271" controlTypeID="com.balsamiq.mockups::Canvas" x="232" y="8" w="77" h="575" measuredW="100" measuredH="70" zOrder="68" locked="false" isInGroup="-1">
@@ -263,14 +263,14 @@
         <text/>
       </controlProperties>
     </control>
-    <control controlID="279" controlTypeID="com.balsamiq.mockups::Button" x="238" y="294" w="-1" h="-1" measuredW="31" measuredH="27" zOrder="76" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>S</text>
-      </controlProperties>
-    </control>
-    <control controlID="280" controlTypeID="com.balsamiq.mockups::Button" x="269" y="294" w="-1" h="-1" measuredW="33" measuredH="27" zOrder="77" locked="false" isInGroup="-1">
+    <control controlID="279" controlTypeID="com.balsamiq.mockups::Button" x="238" y="294" w="-1" h="-1" measuredW="33" measuredH="27" zOrder="76" locked="false" isInGroup="-1">
       <controlProperties>
         <text>M</text>
+      </controlProperties>
+    </control>
+    <control controlID="280" controlTypeID="com.balsamiq.mockups::Button" x="269" y="294" w="-1" h="-1" measuredW="31" measuredH="27" zOrder="77" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>S</text>
       </controlProperties>
     </control>
     <control controlID="281" controlTypeID="com.balsamiq.mockups::RoundButton" x="240" y="230" w="60" h="60" measuredW="32" measuredH="32" zOrder="78" locked="false" isInGroup="-1">
@@ -295,7 +295,7 @@
     </control>
     <control controlID="284" controlTypeID="com.balsamiq.mockups::Button" x="238" y="192" w="65" h="27" measuredW="53" measuredH="27" zOrder="81" locked="false" isInGroup="-1">
       <controlProperties>
-        <color>16777215</color>
+        <color>16750848</color>
         <state>up</state>
         <text>Bus%201</text>
       </controlProperties>
@@ -469,14 +469,14 @@
         <text/>
       </controlProperties>
     </control>
-    <control controlID="310" controlTypeID="com.balsamiq.mockups::Button" x="311" y="293" w="-1" h="-1" measuredW="31" measuredH="27" zOrder="45" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>S</text>
-      </controlProperties>
-    </control>
-    <control controlID="311" controlTypeID="com.balsamiq.mockups::Button" x="342" y="293" w="-1" h="-1" measuredW="33" measuredH="27" zOrder="46" locked="false" isInGroup="-1">
+    <control controlID="310" controlTypeID="com.balsamiq.mockups::Button" x="311" y="293" w="-1" h="-1" measuredW="33" measuredH="27" zOrder="45" locked="false" isInGroup="-1">
       <controlProperties>
         <text>M</text>
+      </controlProperties>
+    </control>
+    <control controlID="311" controlTypeID="com.balsamiq.mockups::Button" x="342" y="293" w="-1" h="-1" measuredW="31" measuredH="27" zOrder="46" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>S</text>
       </controlProperties>
     </control>
     <control controlID="312" controlTypeID="com.balsamiq.mockups::RoundButton" x="313" y="229" w="60" h="60" measuredW="32" measuredH="32" zOrder="47" locked="false" isInGroup="-1">
@@ -501,6 +501,7 @@
     </control>
     <control controlID="315" controlTypeID="com.balsamiq.mockups::Button" x="311" y="18" w="65" h="27" measuredW="53" measuredH="27" zOrder="50" locked="false" isInGroup="-1">
       <controlProperties>
+        <color>16750848</color>
         <state>up</state>
         <text>Bus%201</text>
       </controlProperties>
@@ -512,11 +513,11 @@
         <text>Reverb</text>
       </controlProperties>
     </control>
-    <control controlID="317" controlTypeID="com.balsamiq.mockups::Button" x="311" y="191" w="65" h="27" measuredW="43" measuredH="27" zOrder="52" locked="false" isInGroup="-1">
+    <control controlID="317" controlTypeID="com.balsamiq.mockups::Button" x="311" y="191" w="65" h="27" measuredW="65" measuredH="27" zOrder="52" locked="false" isInGroup="-1">
       <controlProperties>
         <color>16777215</color>
         <state>up</state>
-        <text>Std</text>
+        <text>Master</text>
       </controlProperties>
     </control>
     <control controlID="318" controlTypeID="com.balsamiq.mockups::Canvas" x="378" y="7" w="77" h="575" measuredW="100" measuredH="70" zOrder="98" locked="false" isInGroup="-1">
@@ -575,14 +576,14 @@
         <text/>
       </controlProperties>
     </control>
-    <control controlID="326" controlTypeID="com.balsamiq.mockups::Button" x="384" y="293" w="-1" h="-1" measuredW="31" measuredH="27" zOrder="106" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>S</text>
-      </controlProperties>
-    </control>
-    <control controlID="327" controlTypeID="com.balsamiq.mockups::Button" x="415" y="293" w="-1" h="-1" measuredW="33" measuredH="27" zOrder="107" locked="false" isInGroup="-1">
+    <control controlID="326" controlTypeID="com.balsamiq.mockups::Button" x="384" y="293" w="-1" h="-1" measuredW="33" measuredH="27" zOrder="106" locked="false" isInGroup="-1">
       <controlProperties>
         <text>M</text>
+      </controlProperties>
+    </control>
+    <control controlID="327" controlTypeID="com.balsamiq.mockups::Button" x="415" y="293" w="-1" h="-1" measuredW="31" measuredH="27" zOrder="107" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>S</text>
       </controlProperties>
     </control>
     <control controlID="328" controlTypeID="com.balsamiq.mockups::RoundButton" x="386" y="229" w="60" h="60" measuredW="32" measuredH="32" zOrder="108" locked="false" isInGroup="-1">
@@ -605,18 +606,18 @@
         <text/>
       </controlProperties>
     </control>
-    <control controlID="331" controlTypeID="com.balsamiq.mockups::Button" x="384" y="191" w="65" h="27" measuredW="43" measuredH="27" zOrder="111" locked="false" isInGroup="-1">
+    <control controlID="331" controlTypeID="com.balsamiq.mockups::Button" x="384" y="191" w="65" h="27" measuredW="65" measuredH="27" zOrder="111" locked="false" isInGroup="-1">
       <controlProperties>
         <color>16777215</color>
         <state>up</state>
-        <text>Std</text>
+        <text>Master</text>
       </controlProperties>
     </control>
-    <control controlID="332" controlTypeID="com.balsamiq.mockups::Button" x="384" y="18" w="65" h="27" measuredW="53" measuredH="27" zOrder="112" locked="false" isInGroup="-1">
+    <control controlID="332" controlTypeID="com.balsamiq.mockups::Button" x="384" y="18" w="65" h="27" measuredW="61" measuredH="27" zOrder="112" locked="false" isInGroup="-1">
       <controlProperties>
         <color>16777215</color>
         <state>up</state>
-        <text>Input</text>
+        <text>Select</text>
       </controlProperties>
     </control>
     <control controlID="333" controlTypeID="com.balsamiq.mockups::Canvas" x="451" y="7" w="77" h="575" measuredW="100" measuredH="70" zOrder="53" locked="false" isInGroup="-1">
@@ -675,14 +676,14 @@
         <text/>
       </controlProperties>
     </control>
-    <control controlID="341" controlTypeID="com.balsamiq.mockups::Button" x="457" y="293" w="-1" h="-1" measuredW="31" measuredH="27" zOrder="61" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>S</text>
-      </controlProperties>
-    </control>
-    <control controlID="342" controlTypeID="com.balsamiq.mockups::Button" x="488" y="293" w="-1" h="-1" measuredW="33" measuredH="27" zOrder="62" locked="false" isInGroup="-1">
+    <control controlID="341" controlTypeID="com.balsamiq.mockups::Button" x="457" y="293" w="-1" h="-1" measuredW="33" measuredH="27" zOrder="61" locked="false" isInGroup="-1">
       <controlProperties>
         <text>M</text>
+      </controlProperties>
+    </control>
+    <control controlID="342" controlTypeID="com.balsamiq.mockups::Button" x="488" y="293" w="-1" h="-1" measuredW="31" measuredH="27" zOrder="62" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>S</text>
       </controlProperties>
     </control>
     <control controlID="343" controlTypeID="com.balsamiq.mockups::RoundButton" x="459" y="229" w="60" h="60" measuredW="32" measuredH="32" zOrder="63" locked="false" isInGroup="-1">
@@ -712,11 +713,11 @@
         <text>Jack</text>
       </controlProperties>
     </control>
-    <control controlID="347" controlTypeID="com.balsamiq.mockups::Button" x="457" y="191" w="65" h="27" measuredW="43" measuredH="27" zOrder="67" locked="false" isInGroup="-1">
+    <control controlID="347" controlTypeID="com.balsamiq.mockups::Button" x="457" y="191" w="65" h="27" measuredW="65" measuredH="27" zOrder="67" locked="false" isInGroup="-1">
       <controlProperties>
         <color>16777215</color>
         <state>up</state>
-        <text>Std</text>
+        <text>Master</text>
       </controlProperties>
     </control>
     <control controlID="349" controlTypeID="com.balsamiq.mockups::Canvas" x="524" y="7" w="77" h="575" measuredW="100" measuredH="70" zOrder="83" locked="false" isInGroup="-1">
@@ -775,14 +776,14 @@
         <text/>
       </controlProperties>
     </control>
-    <control controlID="357" controlTypeID="com.balsamiq.mockups::Button" x="530" y="293" w="-1" h="-1" measuredW="31" measuredH="27" zOrder="91" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>S</text>
-      </controlProperties>
-    </control>
-    <control controlID="358" controlTypeID="com.balsamiq.mockups::Button" x="561" y="293" w="-1" h="-1" measuredW="33" measuredH="27" zOrder="92" locked="false" isInGroup="-1">
+    <control controlID="357" controlTypeID="com.balsamiq.mockups::Button" x="530" y="293" w="-1" h="-1" measuredW="33" measuredH="27" zOrder="91" locked="false" isInGroup="-1">
       <controlProperties>
         <text>M</text>
+      </controlProperties>
+    </control>
+    <control controlID="358" controlTypeID="com.balsamiq.mockups::Button" x="561" y="293" w="-1" h="-1" measuredW="31" measuredH="27" zOrder="92" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>S</text>
       </controlProperties>
     </control>
     <control controlID="359" controlTypeID="com.balsamiq.mockups::RoundButton" x="532" y="229" w="60" h="60" measuredW="32" measuredH="32" zOrder="93" locked="false" isInGroup="-1">
@@ -805,11 +806,11 @@
         <text/>
       </controlProperties>
     </control>
-    <control controlID="362" controlTypeID="com.balsamiq.mockups::Button" x="530" y="191" w="65" h="27" measuredW="43" measuredH="27" zOrder="96" locked="false" isInGroup="-1">
+    <control controlID="362" controlTypeID="com.balsamiq.mockups::Button" x="530" y="191" w="65" h="27" measuredW="65" measuredH="27" zOrder="96" locked="false" isInGroup="-1">
       <controlProperties>
         <color>16777215</color>
         <state>up</state>
-        <text>Std</text>
+        <text>Master</text>
       </controlProperties>
     </control>
     <control controlID="363" controlTypeID="com.balsamiq.mockups::Button" x="530" y="18" w="65" h="27" measuredW="51" measuredH="27" zOrder="97" locked="false" isInGroup="-1">

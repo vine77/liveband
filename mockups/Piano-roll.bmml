@@ -181,28 +181,28 @@
         <rightArrow>false</rightArrow>
       </controlProperties>
     </control>
-    <control controlID="81" controlTypeID="com.balsamiq.mockups::HSlider" x="178" y="247" w="156" h="-1" measuredW="33" measuredH="11" zOrder="40" locked="false" isInGroup="-1">
+    <control controlID="81" controlTypeID="com.balsamiq.mockups::HSlider" x="178" y="247" w="156" h="-1" measuredW="33" measuredH="11" zOrder="33" locked="false" isInGroup="-1">
       <controlProperties>
         <value>81</value>
       </controlProperties>
     </control>
-    <control controlID="82" controlTypeID="com.balsamiq.mockups::Label" x="124" y="242" w="-1" h="-1" measuredW="47" measuredH="21" zOrder="41" locked="false" isInGroup="-1">
+    <control controlID="82" controlTypeID="com.balsamiq.mockups::Label" x="124" y="242" w="-1" h="-1" measuredW="47" measuredH="21" zOrder="34" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Velocity</text>
       </controlProperties>
     </control>
-    <control controlID="84" controlTypeID="com.balsamiq.mockups::CallOut" x="128" y="291" w="167" h="90" measuredW="167" measuredH="43" zOrder="42" locked="false" isInGroup="-1">
+    <control controlID="84" controlTypeID="com.balsamiq.mockups::CallOut" x="128" y="291" w="167" h="90" measuredW="167" measuredH="43" zOrder="35" locked="false" isInGroup="-1">
       <controlProperties>
         <backgroundAlpha>1</backgroundAlpha>
         <text>Velocity%20slider%20syncs%20up%0Awith%20selected%20note%0Avertical%20velocity%20slider%0A%28bottom%20right%29</text>
       </controlProperties>
     </control>
-    <control controlID="85" controlTypeID="com.balsamiq.mockups::Switch" x="178" y="58" w="-1" h="-1" measuredW="68" measuredH="28" zOrder="43" locked="false" isInGroup="-1">
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::Switch" x="178" y="58" w="-1" h="-1" measuredW="68" measuredH="28" zOrder="36" locked="false" isInGroup="-1">
       <controlProperties>
         <onOffState>on</onOffState>
       </controlProperties>
     </control>
-    <control controlID="86" controlTypeID="com.balsamiq.mockups::Label" x="124" y="62" w="-1" h="-1" measuredW="31" measuredH="21" zOrder="44" locked="false" isInGroup="-1">
+    <control controlID="86" controlTypeID="com.balsamiq.mockups::Label" x="124" y="62" w="-1" h="-1" measuredW="31" measuredH="21" zOrder="37" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Snap</text>
       </controlProperties>
@@ -212,52 +212,17 @@
         <text>MIDI%20Editor</text>
       </controlProperties>
     </control>
-    <control controlID="91" controlTypeID="com.balsamiq.mockups::NumericStepper" x="178" y="102" w="62" h="-1" measuredW="61" measuredH="24" zOrder="38" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>F%23%202</text>
-      </controlProperties>
-    </control>
-    <control controlID="92" controlTypeID="com.balsamiq.mockups::Label" x="124" y="104" w="-1" h="-1" measuredW="28" measuredH="21" zOrder="39" locked="false" isInGroup="-1">
+    <control controlID="92" controlTypeID="com.balsamiq.mockups::Label" x="124" y="104" w="-1" h="-1" measuredW="28" measuredH="21" zOrder="32" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Note</text>
       </controlProperties>
     </control>
-    <control controlID="100" controlTypeID="com.balsamiq.mockups::NumericStepper" x="178" y="146" w="56" h="-1" measuredW="42" measuredH="24" zOrder="30" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>2</text>
-      </controlProperties>
-    </control>
-    <control controlID="101" controlTypeID="com.balsamiq.mockups::NumericStepper" x="240" y="146" w="41" h="-1" measuredW="42" measuredH="24" zOrder="31" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>2</text>
-      </controlProperties>
-    </control>
-    <control controlID="102" controlTypeID="com.balsamiq.mockups::NumericStepper" x="290" y="146" w="41" h="-1" measuredW="41" measuredH="24" zOrder="32" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>0</text>
-      </controlProperties>
-    </control>
-    <control controlID="103" controlTypeID="com.balsamiq.mockups::Label" x="124" y="148" w="-1" h="-1" measuredW="31" measuredH="21" zOrder="33" locked="false" isInGroup="-1">
+    <control controlID="103" controlTypeID="com.balsamiq.mockups::Label" x="124" y="148" w="-1" h="-1" measuredW="31" measuredH="21" zOrder="30" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Start</text>
       </controlProperties>
     </control>
-    <control controlID="104" controlTypeID="com.balsamiq.mockups::NumericStepper" x="178" y="192" w="56" h="-1" measuredW="42" measuredH="24" zOrder="34" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>2</text>
-      </controlProperties>
-    </control>
-    <control controlID="105" controlTypeID="com.balsamiq.mockups::NumericStepper" x="240" y="192" w="41" h="-1" measuredW="41" measuredH="24" zOrder="35" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>3</text>
-      </controlProperties>
-    </control>
-    <control controlID="106" controlTypeID="com.balsamiq.mockups::NumericStepper" x="290" y="192" w="41" h="-1" measuredW="41" measuredH="24" zOrder="36" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>0</text>
-      </controlProperties>
-    </control>
-    <control controlID="107" controlTypeID="com.balsamiq.mockups::Label" x="124" y="194" w="31" h="-1" measuredW="23" measuredH="21" zOrder="37" locked="false" isInGroup="-1">
+    <control controlID="107" controlTypeID="com.balsamiq.mockups::Label" x="124" y="194" w="31" h="-1" measuredW="23" measuredH="21" zOrder="31" locked="false" isInGroup="-1">
       <controlProperties>
         <text>End</text>
       </controlProperties>
@@ -300,6 +265,51 @@
           </controlProperties>
         </control>
       </groupChildrenDescriptors>
+    </control>
+    <control controlID="110" controlTypeID="com.balsamiq.mockups::TextInput" x="178" y="104" w="-1" h="-1" measuredW="42" measuredH="27" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>F%23%202</text>
+      </controlProperties>
+    </control>
+    <control controlID="111" controlTypeID="com.balsamiq.mockups::TextInput" x="178" y="145" w="42" h="-1" measuredW="23" measuredH="27" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>2</text>
+      </controlProperties>
+    </control>
+    <control controlID="112" controlTypeID="com.balsamiq.mockups::TextInput" x="227" y="145" w="34" h="-1" measuredW="23" measuredH="27" zOrder="40" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>2</text>
+      </controlProperties>
+    </control>
+    <control controlID="114" controlTypeID="com.balsamiq.mockups::TextInput" x="178" y="191" w="42" h="-1" measuredW="23" measuredH="27" zOrder="41" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>2</text>
+      </controlProperties>
+    </control>
+    <control controlID="115" controlTypeID="com.balsamiq.mockups::TextInput" x="227" y="191" w="34" h="-1" measuredW="22" measuredH="27" zOrder="42" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>3</text>
+      </controlProperties>
+    </control>
+    <control controlID="117" controlTypeID="com.balsamiq.mockups::TextInput" x="267" y="145" w="34" h="-1" measuredW="20" measuredH="27" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>1</text>
+      </controlProperties>
+    </control>
+    <control controlID="118" controlTypeID="com.balsamiq.mockups::TextInput" x="267" y="191" w="34" h="-1" measuredW="20" measuredH="27" zOrder="44" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>1</text>
+      </controlProperties>
+    </control>
+    <control controlID="119" controlTypeID="com.balsamiq.mockups::TextInput" x="308" y="145" w="34" h="-1" measuredW="20" measuredH="27" zOrder="45" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>1</text>
+      </controlProperties>
+    </control>
+    <control controlID="120" controlTypeID="com.balsamiq.mockups::TextInput" x="308" y="191" w="34" h="-1" measuredW="20" measuredH="27" zOrder="46" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>1</text>
+      </controlProperties>
     </control>
   </controls>
 </mockup>
