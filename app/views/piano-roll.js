@@ -181,7 +181,7 @@ export default Ember.View.extend({
     var id = el.attr('id').substr(5);
     el.addClass('selected');
     this.$('#velocity-' + id).addClass('selected');
-    //this._autoAdjustScroll(el);
+    this._autoAdjustScroll(el);
 
     this.selectedNote = el;
     this.get('controller').setSelected(parseInt(id));
@@ -191,12 +191,12 @@ export default Ember.View.extend({
     //TODO: *magic numbers -- noooooo*
     var top = el[0].getBoundingClientRect().top;
     var sc;
-    if (top <= 30) {
-      sc = this.$("#keys-and-grid")[0].scrollTop + top - 60;
+    if (top <= 96) {
+      sc = this.$("#keys-and-grid")[0].scrollTop + top - 114;
       this.$("#keys-and-grid").animate({scrollTop: sc + 'px'});
     }
-    else if (top >= 315) {
-      sc = this.$("#keys-and-grid")[0].scrollTop + top + 60;
+    else if (top >= 390) {
+      sc = this.$("#keys-and-grid")[0].scrollTop + top - 204;
       this.$("#keys-and-grid").animate({scrollTop: sc + 'px'});
     }
   },
@@ -431,14 +431,12 @@ export default Ember.View.extend({
     });
 
     this.$('#velocity-parent').scroll(function() {
-      console.log('syncing scroll');
       syncScroll(this);
     });
   },
 
   _updateOffset: function() {
     this.CREATE_OFFSET =
-      //parseInt(this.$('#note-properties').css('width')) +
       parseInt(this.$('#keys').css('width')) + 2 /*border-left on piano keys*/;
   }
 });
