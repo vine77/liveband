@@ -1,14 +1,15 @@
 #drum {
-  padding: $padding;
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
-  background-color: $background-color-light;
+padding: $padding;
+-webkit-flex-grow: 1;
+flex-grow: 1;
+background-color: $background-color-light;
 
 		
 		ul{
 			background-color:red;
 			overflow:hidden;			
-			background-color:#878787;
+			/*background-color:#878787;*/
+			background-color:#EAEAEA;			
 			
 			margin:0px;	
 			padding:0px;
@@ -17,14 +18,13 @@
 		
 		li{
 		  background-color:#262626;
-		  border: 2px solid #D5D5D5;
-		  border-radius: 5px;
+		  border: 2px solid #000;
+		  border-radius: 3px;
 
 		  float:left;
 		  padding:20px;
 		  margin:5px;
 		  display:inline;
-		
 
 		}
 		
@@ -39,7 +39,9 @@
 			width:130px;
 			padding:0px;
 			border:0px;
-			background-color:#878787;
+			/*background-color:#878787;*/
+			background-color:#EAEAEA;			
+			
 			margin-top:13px;		
 		}
 		 
