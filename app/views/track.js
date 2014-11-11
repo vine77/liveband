@@ -24,8 +24,8 @@ export default Ember.View.extend({
       min: 0,
       max: 100,
       value: volume,
-      stop: function(evt) {
-        _this.get('controller').send('setVolume', $(this).slider('value'));
+      stop: function() {
+        _this.get('controller').send('setVolume', _this.$(this).slider('value'));
       }
     });
   }
