@@ -16,9 +16,9 @@
     .track {
       height: 100px;
       padding: 4px;
-      background-color: grey;
-      border-bottom: 1px solid black;
-      border-right: 1px solid black;
+      background-color: $track-labels-background;
+      border-bottom: $track-border;
+      border-right: $track-border;
     }
   }
   .tracks {

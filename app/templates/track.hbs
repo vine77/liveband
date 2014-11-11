@@ -31,8 +31,8 @@
 				</div>
 				<div class="track-toggles">
           {{#unless master}}
-            <button type="button" {{action 'solo'}} {{bind-attr class=":btn :btn-default solo:btn-success"}}>S</button>
-            <button type="button" {{action 'mute'}} {{bind-attr class=":btn :btn-default mute:btn-danger"}}>M</button>
+            <button type="button" {{bind-attr class=":btn  mute:btn-danger"}} title="Mute" {{action "mute"}}><i {{bind-attr class=":fa :fa-fw mute:fa-volume-off:fa-volume-up"}}></i></button>
+            <button type="button" {{bind-attr class=":btn  solo:btn-warning"}} title="Solo" {{action "solo"}}><i class="fa fa-fw fa-headphones"></i></button>
           {{/unless}}
 				</div>
 				<div class="track-volume">
@@ -42,7 +42,16 @@
 							</div>
 					</div>
 					<div class="volume-column" >
-							<!--TODO volume level -->
+							<div class="volume">
+                <div class="progress">
+                  <!--<div class="progress-bar-container" {{bind-attr style=volumeLeftHeight}}>
+                    <div class="progress-bar"></div>
+                  </div>
+                  <div class="progress-bar-container" {{bind-attr style=volumeRightHeight}}>
+                    <div class="progress-bar"></div>
+                  </div>-->
+                </div>
+              </div>
 					</div>
 				</div>
 			</div>

@@ -12,10 +12,10 @@ var Track = DS.Model.extend({
     defaultValue: false
   }),
   input: DS.attr('object', {
-    defaultValue: {id: '', label: 'Input'}
+    defaultValue: {id: '', label: 'None'}
   }),
   output: DS.attr('object', {
-    defaultValue: {id: 'std', label: 'Std'}
+    defaultValue: {id: 'std', label: 'Master'}
   }),
   volume: DS.attr('number', {
     defaultValue: 0

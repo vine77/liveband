@@ -18,6 +18,17 @@ export default Ember.ObjectController.extend({
     saveName: function() {
       this.set('isEditing', false);
       this.get('model').save();
+    },
+    setVolume: function(volume) {
+      this.set('volume', volume);
+      this.get('model').save();
     }
-  }
+  },
+
+  volumeLeftHeight: function() {
+    return 'height: 20%';
+  }.property('volumeLeftHeight'),
+  volumeRightHeight: function() {
+    return 'height: 20%';
+  }.property('volumeRightHeight'),
 });

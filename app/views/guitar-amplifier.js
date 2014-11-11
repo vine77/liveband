@@ -9,6 +9,8 @@ export default Ember.View.extend({
       .attr('data-angleArc', '250')
       .attr('data-width', '150')
       .attr('data-height', '150')
+      .attr('data-fgColor', '#333')
+      .attr('data-bgColor', '#aaa')
       .knob();
     this.$('#vol').click(function() {
       if (Ember.$('#vol').attr('class') === 'fa fa-volume-up fa-2x'){

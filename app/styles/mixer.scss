@@ -29,6 +29,10 @@
     float:left;
     border-right: 1px solid #bbb;
     text-align: center;
+    background-color: $track-background;
+    border-right: $track-border;
+
+
   }
 
   .track div {
@@ -39,7 +43,8 @@
     width: 100px;
     text-align: right;
     padding-right: 6px;
-    border-right: 1px solid #bbb;
+    border-right: $track-border;
+    background-color: $track-labels-background;
   }
 
   .mixer-labels div {
@@ -51,7 +56,7 @@
   }
 
   .effects-section {
-    flex: 0 0 150px;
+    flex: 0 0 164px;
   }
 
   .output-section {
@@ -62,7 +67,7 @@
 
   .label-section {
     flex: 0 0 30px;
-    border-top: 1px solid #bbb;
+    border-top: $track-border;
 
     input {
       max-width: 90px;
@@ -77,13 +82,76 @@
     z-index: 500;
 
     .volume-column {
-       height: 225px;
+      height: 225px;
       flex: 1;
 
+      $volume-height: 220px;
+      $volume-padding: 5px;
       .volume-slider {
-        height: 220px;
+        height: $volume-height;
+      }
+
+      .volume {
+        height: $volume-height;
+
+        .progress {
+          height: $volume-height;
+          padding: 5px;
+          background-color: $control-dark-color;
+          /*.progress-bar {
+            float: none;
+            height: $volume-height - ($volume-padding * 2);
+            height: 5px;
+            background: linear-gradient(to top,
+              hsla(120, 70%, 40%, 1) 0%,
+              hsla(120, 70%, 40%, 1) 75%,
+              hsla(40, 100%, 50%, 1) 75%,
+              hsla(40, 100%, 50%, 1) 95%,
+              hsla(0, 80%, 40%, 1) 95%,
+              hsla(0, 80%, 40%, 1) 100%);
+            &:first-of-type {
+              margin-bottom: 1px;
+            }
+          }
+          .progress-bar-container {
+            overflow: hidden;
+          }*/
+        }
       }
     }
+
+    /*.volume {
+      $volume-width: 150px;
+      $volume-padding: 5px;
+      display: inline-block;
+      width: $volume-width;
+      margin-left: 10px;
+      .progress {
+        height: 21px;
+        margin: 0;
+
+        padding: 5px;
+        background-color: $control-dark-color;
+        .progress-bar {
+          float: none;
+          width: $volume-width - ($volume-padding * 2);
+          height: 5px;
+          background: linear-gradient(to right,
+            hsla(120, 70%, 40%, 1) 0%,
+            hsla(120, 70%, 40%, 1) 75%,
+            hsla(40, 100%, 50%, 1) 75%,
+            hsla(40, 100%, 50%, 1) 95%,
+            hsla(0, 80%, 40%, 1) 95%,
+            hsla(0, 80%, 40%, 1) 100%);
+          &:first-of-type {
+            margin-bottom: 1px;
+          }
+        }
+        .progress-bar-container {
+          overflow: hidden;
+        }
+      }
+    }*/
   }
 
   .output-section .track-toggles,
@@ -125,5 +193,9 @@
   .add-track {
     max-width: 105px;
     padding: 0 100px;
+
+    .btn-link {
+      color: black;
+    }
   }
 }

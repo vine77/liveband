@@ -11,17 +11,22 @@ export default Ember.View.extend({
     .attr('data-angleOffset', '-180')
     .attr('data-width', '75')
     .attr('data-cursor', true)
-    .attr('data-fgColor', '#5C9CCC')
+    .attr('data-fgColor', '#333')
+    .attr('data-bgColor', '#aaa')
     .attr('data-displayInput', false)
     .knob();
 
     var volume = this.get('controller.model.volume');
+    var _this = this;
     this.$('.volume-slider').slider({
       orientation: 'vertical',
       range: 'min',
       min: 0,
       max: 100,
-      value: volume
+      value: volume,
+      stop: function(evt) {
+        _this.get('controller').send('setVolume', $(this).slider('value'));
+      }
     });
   }
 });

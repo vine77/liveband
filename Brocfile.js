@@ -4,7 +4,7 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp({
   'ember-cli-jquery-ui': {
-    'theme': 'redmond'
+    'theme': 'smoothness'
   },
   'ember-cli-bootstrap-sass': {
     'importBootstrapJS': true

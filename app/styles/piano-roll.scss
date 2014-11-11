@@ -135,13 +135,13 @@
 
   .midi-note,
   .velocity-bar {
-    background-color: #5C9CCC;
+    background-color: #777;
     border: 1px solid #555;
   }
 
   .midi-note.selected,
   .velocity-bar.selected {
-    background-color: pink;
+    background-color: #EC971F;
     z-index: 15;
   }
 
@@ -169,7 +169,7 @@
   }
 
   .blank {
-    background-color: #bbb;
+    background-color: $track-labels-background;
     z-index: 20;
   }
 
