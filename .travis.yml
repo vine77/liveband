@@ -16,7 +16,7 @@ before_install:
   - sudo g++ --version;
   - sudo apt-get update -qq;
 
-sudo: false
+sudo: true
 
 cache:
   directories:
