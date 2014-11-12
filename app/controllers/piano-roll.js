@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  needs: ['note-properties'],
   updateNote: function(note) {
     this.store.push('note', note);
     if (note) {
@@ -8,7 +9,6 @@ export default Ember.Controller.extend({
       notePropertiesController.send('setNote', note);
     }
   },
-
   setSelected: function(noteId) {
     var _this = this;
     this.store.find('note', noteId).then(function(data){
@@ -16,16 +16,12 @@ export default Ember.Controller.extend({
       notePropertiesController.send('setNote', data);
     });
   },
-
   unselect: function() {
     var notePropertiesController = this.get('controllers.note-properties');
     notePropertiesController.send('setNote', null);
   },
-
   deleteSelected: function() {
     this.get('controllers.note-properties').deleteSelected();
     this.unselect();
-  },
-
-  needs: 'note-properties'
+  }
 });

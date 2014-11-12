@@ -5,7 +5,7 @@ import {
 
 moduleFor('controller:master-track', 'MasterTrackController', {
   // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
+  needs: ['controller:master']
 });
 
 // Replace this with your real tests.
