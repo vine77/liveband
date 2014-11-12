@@ -1,7 +1,7 @@
 <div id="arrangement">
   <div class="track-details">
     <div class="arrangement-actions"><button type="button" class="btn btn-xs" title="Add track" {{action "addTrack"}}><i class="fa fa-fw fa-plus"></i></button></div>
-    {{#each tracks itemController="track"}}
+    {{#each tracks itemController="mixer/track"}}
       <div class="track">
         <div>{{name}}</div>
         <div>
