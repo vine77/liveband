@@ -7,8 +7,8 @@
   align-items: stretch;
   $ruler-height: 30px;
   .track-details {
-    -webkit-flex-basis: 200px;
-    flex-basis: 200px;
+    -webkit-flex-basis: 300px;
+    flex-basis: 300px;
     .arrangement-actions {
       height: $ruler-height;
       padding: 4px;
@@ -19,6 +19,23 @@
       background-color: $track-labels-background;
       border-bottom: $track-border;
       border-right: $track-border;
+      .track-actions {
+       display: -webkit-flex;
+       display: flex;
+       -webkit-flex-direction: row;
+       flex-direction: row;
+       margin-bottom: 10px;
+        > .btn {
+          float: none;
+          -webkit-flex-grow: 1;
+          flex-grow: 1;
+          text-align: left;
+          &:last-of-type {
+            -webkit-flex-grow: 0;
+            flex-grow: 0;
+          }
+        }
+      }
     }
   }
   .tracks {

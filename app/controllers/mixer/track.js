@@ -1,6 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+  volumeLeftHeight: function() {
+    return 'height: 20%';
+  }.property('volumeLeftHeight'),
+  volumeRightHeight: function() {
+    return 'height: 20%';
+  }.property('volumeRightHeight'),
   actions: {
     mute: function() {
       this.set('mute', this.get('mute') ? false : true);
@@ -22,13 +28,13 @@ export default Ember.ObjectController.extend({
     setVolume: function(volume) {
       this.set('volume', volume);
       this.get('model').save();
+    },
+    delete: function() {
+      var prompt = 'Are you sure you want to delete track "' + this.get('name') + '"?';
+      if (window.confirm(prompt)) {
+        this.get('model').deleteRecord();
+        this.get('model');
+      }
     }
-  },
-
-  volumeLeftHeight: function() {
-    return 'height: 20%';
-  }.property('volumeLeftHeight'),
-  volumeRightHeight: function() {
-    return 'height: 20%';
-  }.property('volumeRightHeight'),
+  }
 });
