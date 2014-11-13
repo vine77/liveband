@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('view:master-track', 'MasterTrackView');
+moduleFor('view:mixer/track', 'MixerTrackView');
 
 // Replace this with your real tests.
 test('it exists', function() {

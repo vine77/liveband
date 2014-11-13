@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('controller:tracks', 'TracksController', {
+moduleFor('controller:mixer/tracks', 'MixerTracksController', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });

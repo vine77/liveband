@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('controller:master-track', 'MasterTrackController', {
+moduleFor('controller:mixer/master-track', 'MixerMasterTrackController', {
   // Specify the other units that are required for this test.
   needs: ['controller:master']
 });
