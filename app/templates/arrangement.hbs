@@ -4,13 +4,14 @@
     {{#each tracks itemController="mixer/track"}}
       <div class="track">
         <div class="track-actions btn-group">
-          <button type="button" class="btn btn-default">
+          <button type="button" class="btn btn-default" {{action "rename"}}>
             {{name}}
           </button>
           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu dropdown-menu-right" role="menu">
+            <li><a {{action "rename"}} href>Rename</a></li>
             <li><a {{action "duplicate"}} href>Duplicate</a></li>
             <li><a {{action "delete"}} href>Delete</a></li>
           </ul>

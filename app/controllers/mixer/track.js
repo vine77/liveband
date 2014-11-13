@@ -36,7 +36,14 @@ export default Ember.ObjectController.extend({
       var prompt = 'Are you sure you want to delete track "' + this.get('name') + '"?';
       if (window.confirm(prompt)) {
         this.get('model').deleteRecord();
-        this.get('model');
+        this.get('model').save();
+      }
+    },
+    rename: function() {
+      var prompt = 'Rename track to:';
+      var newName = window.prompt(prompt);
+      if (!Ember.isEmpty(newName)) {
+        this.set('name', newName);
       }
     }
   }
