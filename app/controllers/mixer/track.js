@@ -29,6 +29,9 @@ export default Ember.ObjectController.extend({
       this.set('volume', volume);
       this.get('model').save();
     },
+    duplicate: function() {
+      this.store.createRecord('track', this.get('model').toJSON()).save();
+    },
     delete: function() {
       var prompt = 'Are you sure you want to delete track "' + this.get('name') + '"?';
       if (window.confirm(prompt)) {
