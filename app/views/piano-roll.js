@@ -51,9 +51,11 @@ export default Ember.View.extend({
       id: id,
       startMeasure: start.measure,
       startQuarter: start.quarter,
+      startEighth: start.eighth,
       startOffset: start.offset,
       endMeasure: end.measure,
       endQuarter: end.quarter,
+      endEighth: end.eighth,
       endOffset: end.offset,
       velocity: velocity,
       tone: tone
@@ -104,10 +106,13 @@ export default Ember.View.extend({
     var measureRemainder = xPos - measure * gridColWidth * this.numBeatsPerMeasure;
     var quarterNote = parseInt(measureRemainder / gridColWidth);
     var quarterNoteRemainder = measureRemainder - quarterNote * gridColWidth;
-    var offset = quarterNoteRemainder * 5;
+    var eighthNote = parseInt((quarterNoteRemainder / gridColWidth) * this.numBeatsPerMeasure);
+    var eighthNoteRemainder =  quarterNoteRemainder - (gridColWidth / this.numBeatsPerMeasure) * eighthNote;
+    var offset = eighthNoteRemainder;
     return {
       measure: measure,
       quarter: quarterNote,
+      eighth: eighthNote,
       offset: offset
     };
   },
