@@ -1,12 +1,18 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
-  volumeLeftHeight: function() {
-    return 'height: 20%';
-  }.property('volumeLeftHeight'),
-  volumeRightHeight: function() {
-    return 'height: 20%';
-  }.property('volumeRightHeight'),
+  volumeLeft: function() {
+    return 90 * (this.get('volume') / 100);
+  }.property('model.volume'),
+  volumeRight: function() {
+    return 100 * (this.get('volume') / 100);
+  }.property('model.volume'),
+  volumeLeftHeightInverted: function() {
+    return 'height:'+ (100 - this.get('volumeLeft')) +'%';
+  }.property('volumeLeft'),
+  volumeRightHeightInverted: function() {
+    return 'height:'+ (100 - this.get('volumeRight')) +'%';
+  }.property('volumeRight'),
   actions: {
     mute: function() {
       this.set('mute', this.get('mute') ? false : true);
