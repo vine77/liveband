@@ -15,5 +15,13 @@ export default Ember.Controller.extend({
   }.property('masterVolumeLeft'),
   masterVolumeRightWidth: function() {
     return 'width:' + this.get('masterVolumeRight') + '%';
-  }.property('masterVolumeRight')
+  }.property('masterVolumeRight'),
+  masterVolumeLeftHeightInverted: function() {
+    var h = Math.max(0, (100 - this.get('masterVolumeLeft')));
+    return 'height:' + h + '%';
+  }.property('masterVolumeLeft'),
+  masterVolumeRightHeightInverted: function() {
+    var h = Math.max(0, (100 - this.get('masterVolumeRight')));
+    return 'height:' + h + '%';
+  }.property('masterVolumeLeft')
 });

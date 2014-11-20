@@ -8,10 +8,12 @@ export default Ember.ObjectController.extend({
     return 100 * (this.get('volume') / 100);
   }.property('model.volume'),
   volumeLeftHeightInverted: function() {
-    return 'height:'+ (100 - this.get('volumeLeft')) +'%';
+    var h = Math.max(0, (100 - this.get('volumeLeft')));
+    return 'height:'+ h +'%';
   }.property('volumeLeft'),
   volumeRightHeightInverted: function() {
-    return 'height:'+ (100 - this.get('volumeRight')) +'%';
+    var h = Math.max(0, (100 - this.get('volumeRight')));
+    return 'height:'+ h +'%';
   }.property('volumeRight'),
   actions: {
     mute: function() {
@@ -33,7 +35,10 @@ export default Ember.ObjectController.extend({
     },
     setVolume: function(volume) {
       this.set('volume', volume);
-      this.get('model').save();
+      this.get('model').save().then(function(){
+      }, function() {
+        //console.log('Error', arguments);
+      });
     },
     duplicate: function() {
       this.store.createRecord('track', this.get('model').toJSON()).save();

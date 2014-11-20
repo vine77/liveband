@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.View.extend({
+  volumeLocked: false,
   //TODO: This should be done using {{ember-knob }}
   // helper in template...
   didInsertElement: function() {
@@ -22,10 +23,15 @@ export default Ember.View.extend({
       orientation: 'vertical',
       range: 'min',
       min: 0,
-      max: 100,
+      max: 120,
       value: volume,
-      stop: function() {
-        _this.get('controller').send('setVolume', _this.$(this).slider('value'));
+      stop: function(event, ui) {
+        var volumeLocked = _this.get('volumeLocked');
+        if (!volumeLocked) {
+          _this.set('volumeLocked', true);
+          _this.get('controller').send('setVolume', ui.value);
+          _this.set('volumeLocked', false);
+        }
       }
     });
   }

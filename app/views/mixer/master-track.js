@@ -22,10 +22,10 @@ export default Ember.View.extend({
       orientation: 'vertical',
       range: 'min',
       min: 0,
-      max: 100,
+      max: 120,
       value: volume,
-      stop: function() {
-        _this.set('controller.masterVolume', _this.$(this).slider('value'));
+      stop: function(evt, ui) {
+        _this.set('controller.masterVolume', ui.value);
       }
     });
   }
