@@ -5,7 +5,7 @@ import {
 
 moduleFor('controller:mixer/track', 'MixerTrackController', {
   // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
+  needs: ['controller:mixer']
 });
 
 // Replace this with your real tests.
