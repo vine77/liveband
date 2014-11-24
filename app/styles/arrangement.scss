@@ -20,11 +20,11 @@
       border-bottom: $track-border;
       border-right: $track-border;
       .track-actions {
-       display: -webkit-flex;
-       display: flex;
-       -webkit-flex-direction: row;
-       flex-direction: row;
-       margin-bottom: 10px;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        margin-bottom: 10px;
         > .btn {
           float: none;
           -webkit-flex-grow: 1;
@@ -34,6 +34,11 @@
             -webkit-flex-grow: 0;
             flex-grow: 0;
           }
+        }
+      }
+      .track-properties {
+        .is-solo-muted {
+          color: red;
         }
       }
     }

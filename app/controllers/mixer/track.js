@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+  needs: ['mixer'],
   volumeLeft: function() {
     return 90 * (this.get('volume') / 100);
   }.property('model.volume'),
@@ -15,6 +16,10 @@ export default Ember.ObjectController.extend({
     var h = Math.max(0, (100 - this.get('volumeRight')));
     return 'height:'+ h +'%';
   }.property('volumeRight'),
+  isSoloMuted: function() {
+    return this.get('controllers.mixer.hasSoloedTrack') && !this.get('solo') && !this.get('mute');
+  }.property('mute', 'controllers.mixer.hasSoloedTrack'),
+  isMuted: Ember.computed.or('mute', 'isSoloMuted'),
   actions: {
     mute: function() {
       this.set('mute', this.get('mute') ? false : true);
@@ -35,10 +40,7 @@ export default Ember.ObjectController.extend({
     },
     setVolume: function(volume) {
       this.set('volume', volume);
-      this.get('model').save().then(function(){
-      }, function() {
-        //console.log('Error', arguments);
-      });
+      this.get('model').save();
     },
     duplicate: function() {
       this.store.createRecord('track', this.get('model').toJSON()).save();

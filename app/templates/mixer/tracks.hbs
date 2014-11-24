@@ -1,10 +1,12 @@
 <div class="tracks">
   {{#each}}
     {{#unless master}}
-      {{render "mixer/track" this}}
+      {{#view "mixer/track"}}
+        {{partial "mixer/track"}}
+      {{/view}}
     {{/unless}}
   {{/each}}
   <div class="add-track">
-    <button {{action 'addTrack'}} type="button" class="btn btn-link">+ Add track</button>
+    <button {{action "addTrack"}} type="button" class="btn btn-link">+ Add track</button>
   </div>
 </div>

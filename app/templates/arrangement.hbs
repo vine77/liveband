@@ -1,7 +1,7 @@
 <div id="arrangement">
   <div class="track-details">
     <div class="arrangement-actions"><button type="button" class="btn btn-xs" title="Add track" {{action "addTrack"}}><i class="fa fa-fw fa-plus"></i></button></div>
-    {{#each tracks itemController="mixer/track"}}
+    {{#each}}
       <div class="track">
         <div class="track-actions btn-group">
           <button type="button" class="btn btn-default" {{action "rename"}}>
@@ -16,9 +16,13 @@
             <li><a {{action "delete"}} href>Delete</a></li>
           </ul>
         </div>
-        <div>
-          <button type="button" {{bind-attr class=":btn :btn-xs mute:btn-danger"}} title="Mute" {{action "mute"}}><i {{bind-attr class=":fa :fa-fw mute:fa-volume-off:fa-volume-up"}}></i></button>
-          <button type="button" {{bind-attr class=":btn :btn-xs solo:btn-warning"}} title="Solo" {{action "solo"}}><i class="fa fa-fw fa-headphones"></i></button>
+        <div class="track-properties">
+          <button type="button" {{bind-attr class=":btn :btn-xs mute:btn-danger isSoloMuted"}} title="Mute" {{action "mute"}}>
+            <i {{bind-attr class=":fa :fa-fw isMuted:fa-volume-off:fa-volume-up"}}></i>
+          </button>
+          <button type="button" {{bind-attr class=":btn :btn-xs solo:btn-warning"}} title="Solo" {{action "solo"}}>
+            <i class="fa fa-fw fa-headphones"></i>
+          </button>
         </div>
       </div>
     {{/each}}

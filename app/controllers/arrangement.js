@@ -1,9 +1,8 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
+export default Ember.ArrayController.extend({
   needs: ['daw'],
-  model: Ember.computed.alias('controllers.daw.model'),
-  tracks: Ember.computed.filterBy('model', 'type', 'audio'),
+  itemController: 'mixer/track',
   actions: {
     addTrack: function() {
       return this.store.createRecord('track').save();

@@ -1,11 +1,10 @@
 <div id="mixer">
   <div class="mixer-labels mixer-col">
-  <div class="input-section">Input</div>
-  <div class="effects-section">Effects</div>
-  <div class="output-section">Output</div>
+    <div class="input-section">Input</div>
+    <div class="effects-section">Effects</div>
+    <div class="output-section">Output</div>
   </div>
-    {{render "mixer/tracks" model}}
-
+  {{partial "mixer/tracks"}}
   <div class="master-track mixer-col">
     {{render "mixer/master-track"}}
   </div>

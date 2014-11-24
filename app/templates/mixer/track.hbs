@@ -1,67 +1,69 @@
 <div class="track mixer-col">
-			<div class="input-section single-button">
-        {{#unless master}}
-          <button type="button" class="btn btn-default">
-            {{input.label}}
+  <div class="input-section single-button">
+    {{#unless master}}
+      <button type="button" class="btn btn-default">
+        {{input.label}}
+      </button>
+    {{/unless}}
+  </div>
+  <div class="effects-section">
+    {{#unless master}}
+      {{#each effects}}
+        <div class="single-button">
+          <button type="button" class="btn btn-primary">
+            {{label}}
           </button>
-        {{/unless}}
-			</div>
-			<div class="effects-section">
-        {{#unless master}}
-				  {{#each effects}}
-            <div class="single-button">
-              <button type="button" class="btn btn-primary">
-              {{label}}
-              </button>
-            </div>
-				  {{/each}}
-        {{/unless}}
-			</div>
-			<div class="output-section">
-				<div class="output-button-row single-button">
-          {{#unless master}}
-            <button type="button" class="btn btn-default">
-            {{output.label}}
-            </button>
-          {{/unless}}
-				</div>
-				<div class="knob">
-          <!-- TODO: replace this with ember-knob helper -->
-					{{input value=leftRightBalance class="mixer-knob"}}
-				</div>
-				<div class="track-toggles">
-          {{#unless master}}
-            <button type="button" {{bind-attr class=":btn  mute:btn-danger"}} title="Mute" {{action "mute"}}><i {{bind-attr class=":fa :fa-fw mute:fa-volume-off:fa-volume-up"}}></i></button>
-            <button type="button" {{bind-attr class=":btn  solo:btn-warning"}} title="Solo" {{action "solo"}}><i class="fa fa-fw fa-headphones"></i></button>
-          {{/unless}}
-				</div>
-				<div class="track-volume">
-					<div class="volume-column" >
-							<div class="volume-slider" {{bind-attr volume=volume}}>
-
-							</div>
-					</div>
-					<div class="volume-column" >
-							<div class="volume">
-                <div class="progress">
-                  <table>
-                    <td><div class="volume-cover" {{bind-attr style=volumeLeftHeightInverted}}></div></td>
-                    <td><div class="volume-cover" {{bind-attr style=volumeRightHeightInverted}}></div></td>
-                  </table>
-                </div>
-              </div>
-					</div>
-				</div>
-			</div>
-			<div class="label-section">
-        {{#if master}}
-          <label>{{name}}</label>
-        {{else}}
-          {{#if isEditing}}
-            {{input focus-out="saveName" insert-newline="saveName" value=name}}
-          {{else}}
-            <label {{action 'edit' on='click'}}>{{name}}</label>
-          {{/if}}
-        {{/if}}
-			</div>
+        </div>
+      {{/each}}
+    {{/unless}}
+  </div>
+  <div class="output-section">
+    <div class="output-button-row single-button">
+      {{#unless master}}
+        <button type="button" class="btn btn-default">
+          {{output.label}}
+        </button>
+      {{/unless}}
+    </div>
+    <div class="knob">
+      <!-- TODO: replace this with ember-knob helper -->
+      {{input value=leftRightBalance class="mixer-knob"}}
+    </div>
+    <div class="track-toggles">
+      {{#unless master}}
+        <button type="button" {{bind-attr class=":btn mute:btn-danger isSoloMuted"}} title="Mute" {{action "mute"}}>
+          <i {{bind-attr class=":fa :fa-fw isMuted:fa-volume-off:fa-volume-up"}}></i>
+        </button>
+        <button type="button" {{bind-attr class=":btn solo:btn-warning"}} title="Solo" {{action "solo"}}>
+          <i class="fa fa-fw fa-headphones"></i>
+        </button>
+      {{/unless}}
+    </div>
+    <div class="track-volume">
+      <div class="volume-column" >
+        <div class="volume-slider" {{bind-attr volume=volume}}></div>
+      </div>
+      <div class="volume-column" >
+        <div class="volume">
+          <div class="progress">
+            <table>
+              <td><div class="volume-cover" {{bind-attr style=volumeLeftHeightInverted}}></div></td>
+              <td><div class="volume-cover" {{bind-attr style=volumeRightHeightInverted}}></div></td>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="label-section">
+    {{#if master}}
+      <label>{{name}}</label>
+    {{else}}
+      {{#if isEditing}}
+        {{input focus-out="saveName" insert-newline="saveName" value=name}}
+      {{else}}
+        <label {{action "edit" on="click"}}>{{name}}</label>
+      {{/if}}
+    {{/if}}
+  </div>
 </div>

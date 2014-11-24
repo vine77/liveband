@@ -34,6 +34,10 @@
     border-right: $track-border;
   }
 
+  .is-solo-muted {
+    color: red;
+  }
+
   .master-track {
     .track {
       border-right: none;
