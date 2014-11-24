@@ -6,7 +6,7 @@
   ],
   "browser" : true,
   "boss" : true,
-  "curly": true,
+  "curly": false,
   "debug": false,
   "devel": true,
   "eqeqeq": true,
@@ -28,5 +28,5 @@
   "white": false,
   "eqnull": true,
   "esnext": true,
-  "unused": true
+  "unused": "vars"
 }
