@@ -1,4 +1,96 @@
 <div id="projects">
-  <p>This is the landing page for projects</p>
-  {{#link-to "daw"}}Go to DAW interface{{/link-to}}
+  <div class="row buffer-bottom">
+    <div class="col-xs-3">
+      <button type="button" class="btn btn-primary" {{action "createProject"}}>
+        <i class="fa fa-plus"></i> New Project
+      </button>
+    </div>
+    <div class="col-xs-6 text-right">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default active">All</button>
+        <button type="button" class="btn btn-default">Private</button>
+        <button type="button" class="btn btn-default">Shared</button>
+        <button type="button" class="btn btn-default">Public</button>
+      </div>
+    </div>
+    <div class="col-xs-3">
+      <div class="input-group pull-right">
+        <input type="text" class="form-control" placeholder="Filter by title...">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <i class="fa fa-filter"></i>
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <table class="table table-bordered">
+      <tr>
+        <th>Project Title</th>
+        <th>Collaborators</th>
+        <th>Public</th>
+        <th>Version</th>
+        <th>Actions</th>
+      </tr>
+      {{#each}}
+        <tr>
+          <td>{{name}}</td>
+          <td>
+            {{#each collaborator}}
+              {{name}}
+            {{/each}}
+          </td>
+          <td>{{capitalize-first shared}}</td>
+          <td>{{rev}}</td>
+          <td>
+            <div class="btn-group">
+              <button class="btn btn-sm btn-default" {{action "previewProject" this}}>
+                <i class="fa fa-play-circle"></i>
+                Preview
+              </button>
+              <button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li>
+                  <a {{action "duplicateProject" this}} href>
+                    <i class="fa fa-copy"></i>
+                    Duplicate
+                  </a>
+                </li>
+                <li>
+                  <a {{action "deleteProject" this}} href>
+                    <i class="fa fa-times-circle"></i>
+                    Delete
+                  </a>
+                </li>
+                {{#if isPublic}}
+                  <li>
+                    <a {{action "toggleIsPublic" this}} href>
+                      <i class="fa fa-eye-slash"></i>
+                      Make private
+                    </a>
+                  </li>
+                {{else}}
+                  <li>
+                    <a {{action "toggleIsPublic" this}} href>
+                      <i class="fa fa-eye"></i>
+                      Make public
+                    </a>
+                  </li>
+                {{/if}}
+              </ul>
+            </div>
+          </td>
+        </tr>
+      {{else}}
+        <tr>
+          <td colspan="100%">
+            No projects were found. <a {{action "createProject"}} href>Start your first project</a>
+          </td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
 </div>

@@ -1,10 +1,17 @@
 html, body {
   background-color: $background-color;
 }
-button, .btn {
+.btn {
+  line-height: 1.42858;
   &:focus, &:active:focus {
     outline: none;
   }
+}
+.buffer-top {
+  margin-top: $padding;
+}
+.buffer-bottom {
+  margin-bottom: $padding;
 }
 .gh-btn {
   background-color: #e6e6e6;
