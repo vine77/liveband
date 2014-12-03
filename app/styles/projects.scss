@@ -3,4 +3,9 @@
   -webkit-flex-grow: 1;
   flex-grow: 1;
   background-color: $background-color-light;
+  table {
+    td {
+      vertical-align: middle;
+    }
+  }
 }

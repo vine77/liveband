@@ -32,7 +32,7 @@ var app = new EmberApp({
 app.import('bower_components/pouchdb/dist/pouchdb.js');
 app.import('bower_components/relational-pouch/dist/pouchdb.relational-pouch.js');
 app.import('bower_components/ember-pouch/dist/globals/main.js');
-
+app.import('bower_components/blueimp-md5/js/md5.js');
 app.import('vendor/js/jquery-knob/jquery.knob.js');
 
 module.exports = app.toTree();

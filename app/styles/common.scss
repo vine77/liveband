@@ -1,6 +1,9 @@
 html, body {
   background-color: $background-color;
 }
+a:hover {
+  cursor: pointer;
+}
 .btn {
   line-height: 1.42858;
   &:focus, &:active:focus {

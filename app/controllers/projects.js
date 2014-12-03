@@ -18,10 +18,18 @@ export default Ember.ArrayController.extend({
       alert('Error: Preview not available at this time.');
     },
     toggleIsPublic: function(project) {
-      window.test = project;
       var prompt = 'Are you sure you want to make project "' + project.get('name') + (project.get('isPublic') ? '" private?' : '" public?');
       if (prompt) {
         project.set('isPublic', !project.get('isPublic'));
+      }
+    },
+    openProject: function(project) {
+      this.transitionTo('daw');
+    },
+    editName: function(project) {
+      var newName = window.prompt('New project title:');
+      if (!Ember.isEmpty(newName)) {
+        project.set('name', newName);
       }
     }
   }

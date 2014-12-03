@@ -26,71 +26,82 @@
   </div>
   <div class="panel panel-default">
     <table class="table table-bordered">
-      <tr>
-        <th>Project Title</th>
-        <th>Collaborators</th>
-        <th>Public</th>
-        <th>Version</th>
-        <th>Actions</th>
-      </tr>
-      {{#each}}
+      <thead>
         <tr>
-          <td>{{name}}</td>
-          <td>
-            {{#each collaborator}}
+          <th>Project Title</th>
+          <th>Collaborators</th>
+          <th>Public</th>
+          <th>Version</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each}}
+          <tr>
+            <td>
               {{name}}
-            {{/each}}
-          </td>
-          <td>{{capitalize-first shared}}</td>
-          <td>{{rev}}</td>
-          <td>
-            <div class="btn-group">
-              <button class="btn btn-sm btn-default" {{action "previewProject" this}}>
-                <i class="fa fa-play-circle"></i>
-                Preview
-              </button>
-              <button class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu dropdown-menu-right">
-                <li>
-                  <a {{action "duplicateProject" this}} href>
-                    <i class="fa fa-copy"></i>
-                    Duplicate
-                  </a>
-                </li>
-                <li>
-                  <a {{action "deleteProject" this}} href>
-                    <i class="fa fa-times-circle"></i>
-                    Delete
-                  </a>
-                </li>
-                {{#if isPublic}}
+              <span class="hint--top" data-hint="Edit">
+                <button class="btn btn-sm btn-default" {{action "editName" this}}>
+                  <i class="fa fa-edit"></i>
+                </button>
+              </span>
+            </td>
+            <td>
+              <ul>
+                {{#each collaborator}}
                   <li>
-                    <a {{action "toggleIsPublic" this}} href>
-                      <i class="fa fa-eye-slash"></i>
-                      Make private
-                    </a>
+                    <img {{bind-attr src=gravatarUrl}}>
+                    {{name}}
                   </li>
-                {{else}}
-                  <li>
-                    <a {{action "toggleIsPublic" this}} href>
-                      <i class="fa fa-eye"></i>
-                      Make public
-                    </a>
-                  </li>
-                {{/if}}
+                {{/each}}
               </ul>
-            </div>
-          </td>
-        </tr>
-      {{else}}
-        <tr>
-          <td colspan="100%">
-            No projects were found. <a {{action "createProject"}} href>Start your first project</a>
-          </td>
-        </tr>
-      {{/each}}
+            </td>
+            <td>
+              {{capitalize-first shared}}
+              {{#if isPublic}}
+                <span class="hint--top" data-hint="Make private">
+                  <button class="btn btn-sm btn-default" {{action "toggleIsPublic" this}}>
+                    <i class="fa fa-eye-slash"></i>
+                  </button>
+                </span>
+              {{else}}
+                <span class="hint--top" data-hint="Make public">
+                  <button class="btn btn-sm btn-default" {{action "toggleIsPublic" this}}>
+                    <i class="fa fa-eye"></i>
+                  </button>
+                </span>
+              {{/if}}
+            </td>
+            <td>{{rev}}</td>
+            <td>
+              <button class="btn btn-sm btn-default" {{action "openProject" this}}>
+                <i class="fa fa-edit"></i> Open
+              </button>
+              <span class="hint--top" data-hint="Preview">
+                <button class="btn btn-sm btn-default" {{action "previewProject" this}}>
+                  <i class="fa fa-play-circle"></i>
+                </button>
+              </span>
+              <span class="hint--top" data-hint="Duplicate">
+                <button class="btn btn-sm btn-default" {{action "duplicateProject" this}}>
+                  <i class="fa fa-copy"></i>
+                </button>
+              </span>
+              <span class="hint--top" data-hint="Delete">
+                <button class="btn btn-sm btn-default" {{action "deleteProject" this}}>
+                  <i class="fa fa-times-circle"></i>
+                </button>
+              </span>
+            </td>
+          </tr>
+        {{else}}
+          <tr>
+            <td colspan="100%">
+              No projects were found. <a {{action "createProject"}}>Start your first project</a>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
     </table>
   </div>
 </div>
