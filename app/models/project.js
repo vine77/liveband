@@ -1,7 +1,12 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
   rev: DS.attr('string'),
+  version: function() {
+    if (Ember.isEmpty(this.get('rev'))) return 0;
+    return parseInt(this.get('rev').split('-')[0]);
+  }.property('rev'),
   name: DS.attr('string', {
     defaultValue: 'New Project'
   }),

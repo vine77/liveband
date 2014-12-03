@@ -8,4 +8,11 @@
       vertical-align: middle;
     }
   }
+  .collaborators {
+    padding: 0;
+    li {
+      list-style-type: none;
+      margin-bottom: 3px;
+    }
+  }
 }

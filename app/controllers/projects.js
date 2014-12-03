@@ -31,6 +31,39 @@ export default Ember.ArrayController.extend({
       if (!Ember.isEmpty(newName)) {
         project.set('name', newName);
       }
+    },
+    addCollaborator: function(project) {
+      var email = window.prompt('What is the email address of the collaborator you would like to add?');
+      if (Ember.isEmpty(email)) return;
+      var user = this.store.all('user').findBy('email', email);
+      if (user !== undefined) {
+        project.get('collaborators').addObject(user);
+        project.save();
+      } else {
+        user = this.store.createRecord('user', {
+          email: email
+        });
+        this.store.find('gravatar', {
+          email: email
+        }).then(function(gravatars) {
+          var gravatar = gravatars.get('firstObject');
+          user.set('gravatar', gravatar);
+          user.save();
+        });
+        user.save().then(function(user) {
+          project.get('collaborators').addObject(user);
+          project.save();
+        });
+      }
+    },
+    deleteCollaborator: function(user, project) {
+      var prompt = 'Are you sure you want to remove user "' + user.get('displayName') + '" from project "' + project.get('name') + '"?';
+      if (window.confirm(prompt)) {
+        project.get('collaborators').removeObject(user);
+        user.deleteRecord();
+        user.save();
+        project.save();
+      }
     }
   }
 });

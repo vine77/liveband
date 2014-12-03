@@ -15,7 +15,7 @@
     </div>
     <div class="col-xs-3">
       <div class="input-group pull-right">
-        <input type="text" class="form-control" placeholder="Filter by title...">
+        <input type="text" class="form-control" placeholder="Filter by title">
         <span class="input-group-btn">
           <button class="btn btn-default" type="button">
             <i class="fa fa-filter"></i>
@@ -47,14 +47,25 @@
               </span>
             </td>
             <td>
-              <ul>
-                {{#each collaborator}}
+              <ul class="collaborators">
+                {{#each user in collaborators}}
                   <li>
-                    <img {{bind-attr src=gravatarUrl}}>
-                    {{name}}
+                    <img class="img-thumbnail" {{bind-attr src=user.gravatarUrl}}>
+                    {{user.displayName}}
+                    <span class="hint--top" data-hint="Remove user from project">
+                      <button class="btn btn-sm btn-default" {{action "deleteCollaborator" user this}}>
+                        <i class="fa fa-times-circle"></i>
+                      </button>
+                    </span>
                   </li>
+                {{else}}
+                  <li>No collaborators</li>
                 {{/each}}
               </ul>
+              <button class="btn btn-sm btn-default" {{action "addCollaborator" this}}>
+                <i class="fa fa-plus-circle"></i>
+                Add collaborator
+              </button>
             </td>
             <td>
               {{capitalize-first shared}}
@@ -72,7 +83,7 @@
                 </span>
               {{/if}}
             </td>
-            <td>{{rev}}</td>
+            <td>{{version}}</td>
             <td>
               <button class="btn btn-sm btn-default" {{action "openProject" this}}>
                 <i class="fa fa-edit"></i> Open
