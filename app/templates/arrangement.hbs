@@ -28,6 +28,12 @@
               {{else}}
                 <li><a>No users found</a></li>
               {{/each}}
+              {{#if track.hasOwner}}
+                <li><a {{action "removeOwner"}}>
+                  <i class="fa fa-minus-circle"></i>
+                  Remove owner
+                </a></li>
+              {{/if}}
             </ul>
           </div>
         </div>

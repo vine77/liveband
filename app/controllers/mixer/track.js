@@ -67,6 +67,15 @@ export default Ember.ObjectController.extend({
         track.set('owner', owner);
         track.save();
       }
+    },
+    removeOwner: function() {
+      var track = this.get('model');
+      var owner = track.get('owner');
+      var prompt = 'Are you sure you want to remove user "' + owner.get('displayName') + '" as the owner of track "' + track.get('name') + '"?';
+      if (window.confirm(prompt)) {
+        track.set('owner', null);
+        track.save();
+      }
     }
   }
 });
