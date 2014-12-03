@@ -29,7 +29,8 @@ var Track = DS.Model.extend({
   }),
   mute: DS.attr('boolean', {
     defaultValue: false
-  })
+  }),
+  owner: DS.belongsTo('user')
 });
 
 export default Track;

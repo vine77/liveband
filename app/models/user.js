@@ -12,5 +12,6 @@ export default DS.Model.extend({
   gravatarUrl: function() {
     return 'http://www.gravatar.com/avatar/' + window.md5(this.get('email')) + '?s=30';
   }.property('email'),
-  gravatar: DS.belongsTo('gravatar', {async: true})
+  gravatar: DS.belongsTo('gravatar', {async: true}),
+  tracks: DS.hasMany('track')
 });

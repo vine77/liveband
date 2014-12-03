@@ -20,6 +20,7 @@ export default Ember.ObjectController.extend({
     return this.get('controllers.mixer.hasSoloedTrack') && !this.get('solo') && !this.get('mute');
   }.property('mute', 'controllers.mixer.hasSoloedTrack'),
   isMuted: Ember.computed.or('mute', 'isSoloMuted'),
+  hasOwner: Ember.computed.notEmpty('owner'),
   actions: {
     mute: function() {
       this.set('mute', this.get('mute') ? false : true);
@@ -57,6 +58,14 @@ export default Ember.ObjectController.extend({
       var newName = window.prompt(prompt);
       if (!Ember.isEmpty(newName)) {
         this.set('name', newName);
+      }
+    },
+    assignOwner: function(owner) {
+      var track = this.get('model');
+      var prompt = 'Are you sure you want to assign user "' + owner.get('displayName') + '" to track "' + track.get('name') + '"?';
+      if (window.confirm(prompt)) {
+        track.set('owner', owner);
+        track.save();
       }
     }
   }

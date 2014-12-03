@@ -1,28 +1,53 @@
 <div id="arrangement">
   <div class="track-details">
     <div class="arrangement-actions"><button type="button" class="btn btn-xs" title="Add track" {{action "addTrack"}}><i class="fa fa-fw fa-plus"></i></button></div>
-    {{#each}}
+    {{#each track in model itemController="mixer/track"}}
       <div class="track">
-        <div class="track-actions btn-group">
-          <button type="button" class="btn btn-default" {{action "rename"}}>
-            {{name}}
-          </button>
-          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-right" role="menu">
-            <li><a {{action "rename"}} href>Rename</a></li>
-            <li><a {{action "duplicate"}} href>Duplicate</a></li>
-            <li><a {{action "delete"}} href>Delete</a></li>
-          </ul>
+        <div class="owner">
+          <div class="btn-group">
+            {{#if track.hasOwner}}
+              <button type="button" {{bind-attr class=":btn :btn-default :hint--top track.hasOwner"}} data-toggle="dropdown" data-hint="Assign track owner">
+                <img {{bind-attr src=track.user.gravatarUrl}}>
+              </button>
+              <button type="button" class="btn btn-default hint--top dropdown-toggle" data-toggle="dropdown" data-hint="Assign track owner">
+                <span class="caret"></span>
+              </button>
+            {{else}}
+              <button {{bind-attr class=":btn :btn-default :dropdown-toggle :hint--top track.hasOwner"}} data-toggle="dropdown" data-hint="Assign track owner">
+                <i class="fa fa-fw fa-user"></i>
+              </button>
+            {{/if}}
+            <ul class="dropdown-menu">
+              {{#each user in users}}
+                <li><a {{action "assignOwner" user}}>{{user.displayName}}</a></li>
+              {{else}}
+                <li><a>No users found</a></li>
+              {{/each}}
+            </ul>
+          </div>
         </div>
         <div class="track-properties">
-          <button type="button" {{bind-attr class=":btn :btn-xs mute:btn-danger isSoloMuted"}} title="Mute" {{action "mute"}}>
-            <i {{bind-attr class=":fa :fa-fw isMuted:fa-volume-off:fa-volume-up"}}></i>
-          </button>
-          <button type="button" {{bind-attr class=":btn :btn-xs solo:btn-warning"}} title="Solo" {{action "solo"}}>
-            <i class="fa fa-fw fa-headphones"></i>
-          </button>
+          <div class="track-dropdown btn-group">
+            <button type="button" class="btn btn-default" {{action "rename"}}>
+              {{track.name}}
+            </button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a {{action "rename"}}>Rename</a></li>
+              <li><a {{action "duplicate"}}>Duplicate</a></li>
+              <li><a {{action "delete"}}>Delete</a></li>
+            </ul>
+          </div>
+          <div class="track-actions">
+            <button type="button" {{bind-attr class=":btn :btn-xs track.mute:btn-danger track.isSoloMuted"}} title="Mute" {{action "mute"}}>
+              <i {{bind-attr class=":fa :fa-fw track.isMuted:fa-volume-off:fa-volume-up"}}></i>
+            </button>
+            <button type="button" {{bind-attr class=":btn :btn-xs track.solo:btn-warning"}} title="Solo" {{action "solo"}}>
+              <i class="fa fa-fw fa-headphones"></i>
+            </button>
+          </div>
         </div>
       </div>
     {{/each}}
@@ -31,7 +56,7 @@
     <div class="ruler">
       &nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </div>
-    {{#each}}
+    {{#each track in model}}
       <div class="track">
       </div>
     {{/each}}
