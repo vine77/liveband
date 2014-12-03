@@ -1,4 +1,19 @@
 #library {
-  padding: $padding;
-  background-color: $gray;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  align-items: stretch;
+  padding: $padding-small;
+  background-color: $background-color-dark;
+  .library-container {
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    padding: $padding;
+    background-color: $track-background;
+    border-radius: $border-radius-base;
+    .title {
+      margin-bottom: $padding-small;
+    }
+  }
 }
