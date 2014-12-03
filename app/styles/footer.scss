@@ -1,5 +1,10 @@
 #footer {
   z-index: 10;
-  padding: $padding;
+  padding: $padding - 5;
   background-color: $gray-light;
+  > .btn {
+    width: 32px;
+    height: 30px;
+    padding: 4px;
+  }
 }
