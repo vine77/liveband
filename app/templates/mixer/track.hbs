@@ -31,10 +31,10 @@
     </div>
     <div class="track-toggles">
       {{#unless master}}
-        <button type="button" {{bind-attr class=":btn mute:btn-danger isSoloMuted"}} title="Mute" {{action "mute"}}>
+        <button type="button" {{bind-attr class=":btn :hint--top mute:btn-danger isSoloMuted"}} data-hint="Mute" {{action "mute"}}>
           <i {{bind-attr class=":fa :fa-fw isMuted:fa-volume-off:fa-volume-up"}}></i>
         </button>
-        <button type="button" {{bind-attr class=":btn solo:btn-warning"}} title="Solo" {{action "solo"}}>
+        <button type="button" {{bind-attr class=":btn :hint--top solo:btn-warning"}} data-hint="Solo" {{action "solo"}}>
           <i class="fa fa-fw fa-headphones"></i>
         </button>
       {{/unless}}

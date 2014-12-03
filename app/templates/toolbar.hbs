@@ -1,16 +1,32 @@
 <div id="toolbar">
   <div id="toolbar-left">
     <div class="btn-group">
-      <button type="button" {{bind-attr class=":btn isPlaying:btn-primary:btn-default"}} title="Play" {{action "play"}}><i class="fa fa-play"></i></button>
-      <button type="button" class="btn btn-default" title="Stop" {{action "stop"}}><i class="fa fa-stop"></i></button>
-      <button type="button" class="btn btn-default" title="Pause" {{action "pause"}}><i class="fa fa-pause"></i></button>
-      <button type="button" {{bind-attr class=":btn isRecording:btn-danger:btn-default"}} style="color:red;" title="Record" {{action "record"}}><i class="fa fa-circle"></i></button>
+      <button type="button" {{bind-attr class=":btn :hint--top isPlaying:btn-primary:btn-default"}} data-hint="Play" {{action "play"}}>
+        <i class="fa fa-play"></i>
+      </button>
+      <button type="button" class="btn btn-default hint--top" data-hint="Stop" {{action "stop"}}>
+        <i class="fa fa-stop"></i>
+      </button>
+      <button type="button" class="btn btn-default hint--top" data-hint="Pause" {{action "pause"}}>
+        <i class="fa fa-pause"></i>
+      </button>
+      <button type="button" {{bind-attr class=":btn :hint--top isRecording:btn-danger:btn-default"}} style="color:red;" data-hint="Record" {{action "record"}}>
+        <i class="fa fa-circle"></i>
+      </button>
     </div>
     <div class="btn-group">
-      <button type="button" class="btn btn-default" title="Go to beginning"><i class="fa fa-fast-backward"></i></button>
-      <button type="button" class="btn btn-default" title="Step backward"><i class="fa fa-backward"></i></button>
-      <button type="button" class="btn btn-default" title="Step forward"><i class="fa fa-forward"></i></button>
-      <button type="button" class="btn btn-default" title="Go to end"><i class="fa fa-fast-forward"></i></button>
+      <button type="button" class="btn btn-default hint--top" data-hint="Go to beginning">
+        <i class="fa fa-fast-backward"></i>
+      </button>
+      <button type="button" class="btn btn-default hint--top" data-hint="Step backward">
+        <i class="fa fa-backward"></i>
+      </button>
+      <button type="button" class="btn btn-default hint--top" data-hint="Step forward">
+        <i class="fa fa-forward"></i>
+      </button>
+      <button type="button" class="btn btn-default hint--top" data-hint="Go to end">
+        <i class="fa fa-fast-forward"></i>
+      </button>
     </div>
   </div>
   <div id="toolbar-middle">
@@ -23,9 +39,13 @@
   </div>
   <div id="toolbar-right">
     <div class="btn-group inline-block">
-      <button type="button" {{bind-attr class=":btn isLooping:btn-primary:btn-default"}} title="Loop" {{action "toggleLooping"}}><i class="fa fa-refresh"></i></button>
-      <button type="button" {{bind-attr class=":btn isCountIn:btn-primary:btn-default"}} title="Count in" {{action "toggleCountIn"}}><i class="fa fa-arrow-circle-o-right"></i></button>
-      <button type="button" {{bind-attr class=":btn :metronome isMetronome:btn-primary:btn-default"}} title="Metronome" {{action "toggleMetronome"}}>
+      <button type="button" {{bind-attr class=":btn :hint--top isLooping:btn-primary:btn-default"}} data-hint="Loop" {{action "toggleLooping"}}>
+        <i class="fa fa-refresh"></i>
+      </button>
+      <button type="button" {{bind-attr class=":btn :hint--top isCountIn:btn-primary:btn-default"}} data-hint="Count in" {{action "toggleCountIn"}}>
+        <i class="fa fa-arrow-circle-o-right"></i>
+      </button>
+      <button type="button" {{bind-attr class=":btn :metronome :hint--top isMetronome:btn-primary:btn-default"}} data-hint="Metronome" {{action "toggleMetronome"}}>
         <i class="fa fa-circle"></i>
         <i class="fa fa-circle-thin"></i>
       </button>
