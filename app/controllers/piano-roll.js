@@ -20,8 +20,10 @@ export default Ember.Controller.extend({
     var notePropertiesController = this.get('controllers.note-properties');
     notePropertiesController.send('setNote', null);
   },
-  deleteSelected: function() {
-    this.get('controllers.note-properties').deleteSelected();
-    this.unselect();
+  actions: {
+    deleteSelected: function() {
+      this.unselect();
+      //TODO: Delete from model
+    }
   }
 });

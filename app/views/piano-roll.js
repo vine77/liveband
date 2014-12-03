@@ -195,13 +195,20 @@ export default Ember.View.extend({
   _autoAdjustScroll: function(el) {
     //TODO: *magic numbers -- noooooo*
     var top = el[0].getBoundingClientRect().top;
+    console.log('TOP', top);
     var sc;
-    if (top <= 96) {
-      sc = this.$("#keys-and-grid")[0].scrollTop + top - 114;
+    var diff;
+    //TODO: too much hackery
+    if (top <= 128) {
+      //scroll up
+
+      diff = 128 - top + 20;
+      sc = this.$("#keys-and-grid")[0].scrollTop - diff;
       this.$("#keys-and-grid").animate({scrollTop: sc + 'px'});
     }
     else if (top >= 390) {
-      sc = this.$("#keys-and-grid")[0].scrollTop + top - 204;
+      diff = top - 390 + 20;
+      sc = this.$("#keys-and-grid")[0].scrollTop + diff;
       this.$("#keys-and-grid").animate({scrollTop: sc + 'px'});
     }
   },
@@ -239,8 +246,7 @@ export default Ember.View.extend({
 
   _deleteSelectedNote: function() {
     if (this.selectedNote) {
-      //TODO
-      //this.get('controller').deleteSelected();
+      this.get('controller').send('deleteSelected');
       this.$('#velocity-' + this.$(this.selectedNote).attr('id').substr(5)).remove();
       this.$(this.selectedNote).remove();
     }

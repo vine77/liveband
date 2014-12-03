@@ -146,6 +146,10 @@
   .output-section .track-toggles,
   .output-section .output-button-row {
     flex: 0 0 40px;
+
+    .btn {
+      padding: 6px 10px;
+    }
   }
 
   .output-section .knob {
