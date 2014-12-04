@@ -12,6 +12,7 @@
     .arrangement-actions {
       height: $ruler-height;
       padding: 4px;
+      border-bottom: 1px solid $control-dark-color;
     }
     .track {
       display: -webkit-flex;
