@@ -7,20 +7,35 @@
   padding: $padding-small;
   background-color: $background-color-dark;
   .chat-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    align-items: column;
     -webkit-flex-grow: 1;
     flex-grow: 1;
     padding: $padding;
     background-color: $track-background;
     border-radius: $border-radius-base;
-    .title {
-      margin-bottom: $padding-small;
-      font-weight: bold;
+    .chat-discussion {
+      -webkit-flex-grow: 1;
+      flex-grow: 1;
+      .title {
+        margin-bottom: $padding-small;
+        font-weight: bold;
+      }
+      hr {
+        margin: 10px 0 5px;
+        border: 0;
+        height: 1px;
+        background: #ccc;
+      }
     }
-    hr {
-      margin: 10px 0 5px;
-      border: 0;
-      height: 1px;
-      background: #ccc;
+    .chat-input {
+      -webkit-flex-basis: 30px;
+      flex-basis: 30px;
+      background-color: white;
+      border: 1px solid #aaa;
     }
   }
 }

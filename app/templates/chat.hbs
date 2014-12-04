@@ -1,12 +1,16 @@
 <aside id="chat">
   <div class="chat-container">
-    <div class="title">Collaborators</div>
-    {{#each user in collaborators}}
-      <img class="img-thumbnail" {{bind-attr src=user.gravatarUrl}}>
-    {{else}}
-      None
-    {{/each}}
-    <hr>
-    <div class="title">Chat</div>
+    <div class="chat-discussion">
+      <div class="title">Collaborators</div>
+      {{#each user in collaborators}}
+        <img class="img-thumbnail" {{bind-attr src=user.gravatarUrl}}>
+      {{else}}
+        None
+      {{/each}}
+      <hr>
+      <div class="title">Chat</div>
+      <img src="assets/images/chat.png">
+    </div>
+    <div class="chat-input"></div>
   <div>
 </aside>
