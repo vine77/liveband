@@ -12,7 +12,7 @@
           <div class="btn-group">
             {{#if track.hasOwner}}
               <button type="button" {{bind-attr class=":btn :btn-default :hint--top track.hasOwner"}} data-toggle="dropdown" data-hint="Assign track owner">
-                <img {{bind-attr src=track.user.gravatarUrl}}>
+                <img {{bind-attr src=track.owner.gravatarUrl}}>
               </button>
               <button type="button" class="btn btn-default hint--top dropdown-toggle" data-toggle="dropdown" data-hint="Assign track owner">
                 <span class="caret"></span>
